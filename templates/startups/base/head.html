@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"  style="height:100%">   
+    <head>
+        {% block head %}
+        <title>Match with investors</title>
+        <meta name="description" content="Affiliate marketing">
+        <meta charset="UTF">
+        <meta name="author" content="Imran Abdu">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+        <meta http-equiv="refresh" content="216000">
+        <link rel='icon' href="{% static 'images/icon.png' %}">
+        <link rel="stylesheet" href='{% static "css/head.css" %}'>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+
+    {% endblock head %}
+
+        <body style="height:100%">
+
+
+<header>
+    <nav class="main-nav">
+        <input type="checkbox" id="check" />
+        <label for="check" class="menu-btn">
+          <i class="fas fa-bars" style="color: black;"></i>
+        </label>
+        <a href="{% url 'startups' %}" class="logo">DiverseFounders </a> <a class="for-investors">For investors</a>
+
+        <style>
+           .for-investors{
+               font-size:10px;
+               font-weight: bold;
+           }
+        </style>
+
+        <ul class="navlinks">
+            <li><a href="{% url 'startupsinvestorprofile' %}">Create Investor Profile</a></li>
+            <li><a href="{% url 'startupsstartupprofile' %}">Create Startup Profile</a></li>
+
+            {% if user.is_authenticated %}
+
+            <div tabindex="0" class="menu">
+                <div class="ll">
+                    <img src="{{profile.profileimg.url}}" class="igm-profile "><i class="fa fa-angle-down " aria-hidden="true "></i>
+                </div>
+                <div class="menu-dropdown ">
+                    <p style="font-size:13px;line-height:10px;color:orange; ">Signed in as {{request.user}} 😊</p>
+                    <hr>
+                    <a href="{% url 'dashboard' %} ">Profile</a>
+                    <a href="{% url 'campaigns' %} ">My campaigns</a>
+                    <a href="{% url 'fundingprofile' %} ">My Contributions </a>
+                    <a href="{% url 'editprofile' %} "> Edit profile</a>
+                    <hr>
+                    <a href="{% url 'logoutuser' %} ">Log out</a>
+                </div>
+            </div>
+
+
+            <div class="morgen ">
+                <li><a href="{% url 'dashboard' %} ">Profile</a></li>
+                <li><a href="{% url 'campaigns' %} ">My campaigns</a></li>
+                <li><a href="{% url 'fundingprofile' %} ">My Contributions </a></li>
+                <li><a href="{% url 'editprofile' %} "> Edit profile</a></li>
+                <hr>
+                <li><a href="{% url 'logoutuser' %} ">Log out</a></li>
+            </div>
+
+
+            {% else %}
+
+            <li><a href="{% url 'signup' %} " class="contact " style="border-left: 1px solid black; padding-left:10px; ">Sign up</a></li>
+            <li><a href="{% url 'login' %} " class="contact ">Log in</a></li>
+            {% endif %}
+
+        </ul>
+        <div>
+        {% block content %} {% endblock content %}
+        </div>
+    </nav>
+
+
+    
+    {% include 'policy/cookieapi.html' %}
+    {% block cookieapi %} 
+    {% endblock cookieapi %}
+</header>

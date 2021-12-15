@@ -1,0 +1,17 @@
+.cookiep{
+    width:65%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0px);
+    margin-top:100px;
+    margin-bottom:100px;
+}
+
+h2{
+    margin-top:70px;
+}
+
+li{
+    list-style: decimal;
+    color:rgb(94, 94, 94)
+}

@@ -1,0 +1,305 @@
+{% load static %}
+<head>
+    <title>{{data.campaignName}} | Diversefounders</title>
+    <meta name="description" content="Affiliate marketing">
+    <meta charset="UTF">
+    <meta name="author" content="Imran Abdu"> 
+    <link rel='icon' href="{% static 'images/icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="216000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/card/1.3.1/js/card.min.js"></script>
+</head>
+
+<body>
+
+    <style>
+        .header{
+            padding:4px;
+        }
+
+        .header p{
+           text-align: center;
+           border-bottom:1px solid silver;
+           font-size: 26px;
+           font-weight: bolder;
+           letter-spacing: -1px;
+           padding:5px;
+        }
+
+        .move-back{
+            margin-left:150px;
+            color:grey;
+            font-size:16px;
+            font-weight: bold;
+            font-family: "Poppins",sans-serif;
+            cursor: pointer;
+        }
+
+        a:hover{
+         text-decoration: none;
+         color:rgb(83, 83, 83);  
+        }
+
+        .first-div{
+            margin-top:50px;
+            margin-left:150px;
+            width:70%;
+        }
+        .first-div h4{
+            color:grey;
+        }
+
+        .first-div img{
+            height:100px;
+        }
+
+        .form-for-card{
+            margin-top:50px;
+            width:55%;
+            float:left;
+            margin-right:100px;
+            margin-left:100px;
+        }
+
+        label{
+            margin-top:0px;
+        }
+
+        .card{
+                  display: none;
+                }
+                .well{
+                    background-color: rgb(255, 255, 255);
+                    border:1px solid transparent;
+                    padding:0px;
+                }
+
+                .grid{
+                    margin:0px;
+                    padding:0px;
+                    width:100%;
+                    border:1px solid silver;
+                    padding:20px;
+                    border-radius: 5px;
+                }
+
+                input{
+                    border-radius: 3px;
+                    border:1px solid silver;
+                }
+                .form-control{
+                     width:100%;
+                     padding:20px;
+                }
+
+                input:focus {
+        transition: 0.5s;
+        border: 1px solid orangered !important;
+        box-shadow: 0 0 3px darkorange !important;
+        -moz-box-shadow: 0 0 3px darkorange !important;
+        -webkit-box-shadow: 0 0 3px darkorange !important;
+    }
+    
+    input:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+
+
+    </style>
+
+<header class="header">
+  <p>Diversefounders</p>
+</header>
+    
+    
+
+
+  <style>
+
+    .profile-for-person{
+        margin-top:100px;
+        clear: both;
+        width:39%;
+        border:1px solid blue;
+        position:absolute;
+        right:0px;
+        top:100px;
+    }
+
+    .contribution-form input{
+        width:100%;
+        padding:10px;
+        border-radius: 3px;
+        border:none;
+    }
+
+    .contribution-form input:focus {
+        border:none !important;
+        box-shadow: none !important;
+    }
+
+    input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+    
+    .contribution-form input:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+
+    .contribution form{
+        border:1px solid silver;
+        padding-left: 10px;
+        padding-right:30px;
+        display: inline-flex;
+    }
+
+    .container-fluid label{
+      font-weight: lighter;
+      font-family: "poppins",sans-serif;
+      color:rgb(73, 73, 73);
+    }
+
+    .profile-for-person p{
+        font-size:16px
+    }
+
+    .profile-for-person a{
+        font-size:14px
+    }
+    .usds{
+     color:green;
+     margin-top:10px;
+    }
+
+    .dollar-sign{
+        margin-top:11px;
+    }
+
+    .left{
+      width:80%;
+      float:left;
+    }
+</style>
+
+
+  <a href="{% url 'campaignviewprivate' campaign.id campaign.campaignName %}" class="move-back"><i class="fa fa-angle-left" aria-hidden="true"></i> Back</a>
+
+
+    <div class="first-div">
+        <h4>YOU'RE CONTRIBUTING TO</h4>
+        <h3>{{data.campaignName}}</h3>
+
+        <img src="{{data.pitchFile.url}}">
+    </div>
+    
+
+
+    <div class="left">
+
+    <form class="form-for-card">
+
+        <p style="font-family: 'poppins',sans-serif;"><i class="fa fa-shield" aria-hidden="true"></i> Make a secure Payment</p>
+
+        <div class="container-fluid grid">
+            <div class="well">
+              <div class="row card">
+              </div>
+                  <br/>
+                  <style>
+                    .well{
+                      width:60%;
+                    }
+                  </style>
+        
+                  <div class="row-fluid">
+                      <div class="form-group">
+                        <label>Card Number <i class="fa fa-credit-card" aria-hidden="true"></i> *</label><br>
+                        <input type="text" name="number" placeholder="Card number" class="form-control" /><br>
+                      </div>
+                    </div>
+                    
+                      <div class="form-group" style="margin-bottom:0px;">
+                        <label>Expiration *</label><br>
+        
+                        <input type="text" placeholder="MM/YY" name="expiry" class="form-control" /><br>
+        
+                      </div>
+                    </div>
+        
+                    <div class="row-fluid" >
+                    
+                        <div class="form-group" >
+                          <label>Name on card *</label>
+                          <input type="text" name="name" class="form-control" placeholder="Card holder name" maxlength="30"/>
+                        </div>
+                      </div>
+        
+                
+                      <div class="form-group">
+        
+                        <label>Security code *</label><br>
+        
+                        <input type="text" name="cvv" placeholder="cvv" class="form-control" /><br>
+                        <div class="g-recaptcha" data-sitekey="6LcGdYEdAAAAAKoph9j7NaqSLywBzhOtLZZldWpm"></div>
+                        <!--RECpthcha-->
+                        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                        </div></div></form></div>
+    <script>
+        //global grecaptcha
+        grecaptcha.ready(function() {
+          grecaptcha.execute('{{recaptcha_site_key}}', {action: "/contact/"}).then(function(token) {
+            document.getElementById('g-recaptcha-response').value = token;
+          });
+        });
+      </script>
+    
+    <script>
+        new Card({
+          form: 'form',
+          container: '.card',
+          formSelectors: {
+            numberInput: 'input[name=number]',
+            expiryInput: 'input[name=expiry]',
+            cvcInput: 'input[name=cvv]',
+            nameInput: 'input[name=name]'
+          },
+        
+          width: 390, // optional — default 350px
+          formatting: true,
+        
+          placeholders: {
+            number: '•••• •••• •••• ••••',
+            name: 'Full Name',
+            expiry: '••/••',
+            cvc: '•••'
+          }
+        })
+          </script>
+
+ 
+<div class="profile-for-person">
+  <p>Imran Abdu <a href="">logout</a></p>
+  <p>imranabdu936@gmail.com</p>
+
+  <div class="contribution">
+  <p>Your contribution</p>
+  <form class="contribution-form">
+      <p class="dollar-sign">$</p>
+      <input type="number" value="20">
+      <P class="usds">USD</P>
+  </form>
+ </div></div>
+</body>

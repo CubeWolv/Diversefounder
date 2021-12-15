@@ -1,0 +1,225 @@
+{% extends "parts/nav.html" %} {% load static %} {% block content %}
+<head>
+    <title>Start a campaign</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel='stylesheet' href="{% static 'css/dashnav.css' %}">
+<link rel='stylesheet' href="{% static 'css/settings.css' %}">
+<link rel='stylesheet' href="{% static 'css/createcampaign.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+<script src="https://cdn.tiny.cloud/1/bk7sr0bb5ia1ri4yu2hd05sdqxqces0w22w3ciqwnoc60ep8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{% static 'js/country.js' %}"></script>
+<script src="{% static 'js/editor.js' %}"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AVVvpjsCYOt55zLxqsBYPXgtvSOw0nEWPZNrR_uruxeJeF-ADfC-3mrV_CEB5FJFzLFjZzEO3Su4n79K"> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.</script>
+
+</head>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-image: url('{% static "images/camppic.jpg" %}');
+    }
+    
+    .divio-mamm {
+        text-align: center;
+        width: 530px;
+        margin-top: 30px;
+    }
+     
+    .as {
+        font-size: 30px;
+    }
+    
+    .form-name-ca {
+        left: 50%;
+    }
+    
+    .ships {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 300px;
+        border-radius: 4px;
+        color: white;
+        margin-top: 30px;
+    }
+    
+    .input-place-m {
+        width: 500px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid grey;
+    }
+    
+    .imo-wont-change {
+        background-color: rgb(163, 218, 255);
+        border: 1px solid rgb(0, 162, 255);
+        width: 600px;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-top: 30px;
+    }
+    
+    @media(max-width:645px) {
+        .divio-mamm {
+            width: 100%;
+        }
+        .input-place-m {
+            width: 95%;
+        }
+        .imo-wont-change {
+            width: 90%;
+        }
+    }
+
+        /*input*/
+        input {
+        width: 500px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 10px;
+        border-radius: 3px;
+        border: 1px solid grey
+    }
+
+    .form-name-ca label {
+        margin-top: 5%;
+    }
+
+    .form-name-ca input:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(45, 113, 180) !important;
+        box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -moz-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -webkit-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    }
+
+    .form-name-ca input:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+
+    @media(max-width:900px) {
+        .form-name-ca input {
+            width: 90%;
+            margin-right: 0vw;
+        }
+
+       .form-name-ca label {
+            margin-top: 8%;
+        }
+    }
+
+    .form-name-ca input:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(45, 113, 180) !important;
+        box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -moz-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -webkit-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    }
+
+    .form-name-ca input:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+
+    @media(max-width:900px) {
+        .form-name-ca input {
+            width: 90%;
+            margin-right: 0vw;
+        }
+
+        .form-name-ca label {
+            margin-top: 8%;
+        }
+    }
+</style>
+
+
+
+<center>
+    <div class="divio-mamm">
+
+        <h1 class="as">Lets get your Campaign out there with diverse founders!</h1>
+        <h4 style="text-align: center;">Raise money for your startup, small business, passion campaign, or non-profit.</h4>
+    </div>
+
+    <hr>
+
+
+
+
+
+    <form class="form-name-ca"  method="post" action="{% url 'createcampaign' %}">
+        {%csrf_token%}
+        <label style="margin-top:30px">Tell us what you are trying to campaign</label><br>
+    <select class="input-place-m" id='namecompany' name="type">
+    <option value="public">Public</option>
+    <option value="personal">Personal</option>
+    <option value="startup">Startup</option>
+
+ </select><br>
+
+
+        <div class="imo-wont-change">
+            <p class="dsf"> Note: The above field will be locked for this campaign and can’t be changed later.!</p>
+        </div>
+
+
+
+ <label>Campaign name *</label><br>
+ <input type="text" name="campname" maxlength="50" id='inputcampanme'><br>
+
+
+
+
+
+        <a href="#">
+            <button class="btn btn-primary ships" disabled id="subbutton">Start campaign</button>
+        </a>
+    </form>
+
+
+
+
+
+<script>
+let inputElt = document.getElementById('inputcampanme');
+let btn = document.getElementById('subbutton');
+
+inputElt.addEventListener("input", function(){
+  btn.disabled = (this.value === '');
+})
+</script>
+
+
+
+
+
+
+
+{% include 'parts/footer_account.html' %}
+{% block footeraccount %}
+{% endblock footeraccount %}
+
+
+
+
+
+
+
+
+
+    {% endblock %}

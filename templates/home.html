@@ -1,0 +1,464 @@
+{% extends "parts/nav.html" %}
+{% block head %}
+<head>
+<title>Diversefounders</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+{% load static %}
+<link rel='icon' href='{% static 'images/icon.png' %}'
+><script src="{% static 'js/home.js' %}"></script>
+<link rel='stylesheet' href='{% static "css/home.css" %}'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+{% endblock head %}
+<body>
+  {% block navigation %}
+
+
+{% block content %}
+<style>
+
+  .the-imos-like-h-l{
+    position: fixed;
+    top:0px;
+    width:10000px;
+  }
+
+  .email-join{
+    border:none;
+    background-color: rgba(219, 219, 219, 0.247);
+    width:60px;
+    padding-top:10px;
+    padding-bottom:10px;
+    margin-left:5px;
+    border-radius: 3px;
+  }
+
+  
+ .the-king-of-all-imos{
+   position: relative;
+   top:20px;
+   left: 20px;
+   color:black
+ }
+</style>
+
+
+
+<p style="margin-left:40px;margin-top:40px;font-size: 13px;">FEATURED PROJECTS</p>
+<header class="hhh">
+ 
+    <!-- slider area -->
+    
+    
+    
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-pause="false">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="otheractive"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="otheractive"></li>
+      </ol>
+    
+    
+              <div class="carousel-inner">
+    
+                <div class="carousel-item active">
+                  <div class="banner" style="background-image: linear-gradient(to right,rgb(0, 0, 0),rgb(0, 0, 78));"></div>
+                  <div class="carousel-caption d-none d-md-block">
+                    
+                   </div>
+                </div>
+                
+    
+               <div class="carousel-item ">
+                  <div class="banner" style="background-image: linear-gradient(to right,rgb(0, 0, 0),rgb(0, 0, 78));"></div>
+                  <div class="carousel-caption d-none d-md-block">
+                      
+                  </div>
+                </div>
+    
+    
+                <div class="carousel-item ">
+                  <div class="banner" style="background-image: linear-gradient(to right,rgb(0, 0, 0),rgb(0, 0, 78));"></div>
+                  <div class="carousel-caption d-none d-md-block">
+                    
+                   </div>
+                </div>
+               
+    
+
+                {% include 'emojs/like.html' with urlforbutton=" campaign " %}
+                <div class="the-imos-like-h-l">    
+               {% block like %}
+               
+               {% endblock like %}
+               </div>
+              </div>   
+        
+
+
+    
+      
+
+              
+             </div>
+            </div>
+
+    
+  
+    
+    
+       </header>
+
+
+       <div class="the-signup-staff-cd">
+         <p>Make this your space</p>
+         <h1 class="launcher">Join Other Funders</h1>
+         <p></p>
+
+         <a href="{% url 'signup' %}"><button class="join-now-button">Join now</button></a>
+          </div>
+        
+        
+  
+        
+
+
+
+
+
+        
+    
+        
+    
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<div class="div-12">
+  <div class="shitnavbar">
+<a href="{% url 'projects' %}" class="navigator"  id="dashboardlink">Most popular</a>
+<a href="{% url 'projects' %}" class="navigator" id="editprofile"> arts</a>
+<a href="{% url 'projects' %}" class="navigator" id="fundingprofile">Fashion</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Tech</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Games</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Food</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Film</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Music</a>
+<a href="{% url 'projects' %}" class="navigator" id="campaigns">Health and Fitness</a>
+<a href="{% url 'projects' %}"><li class="navigator"><i class="fa fa-ellipsis-h" aria-hidden="true" style="color:white;"></i></li></div>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+<p class="headers-for-the-product-category">MOST POPULAR       <a href="{% url 'projects' %}">       See more   <i class="fa fa-angle-right" aria-hidden="true" ></i></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="all-the-staff-in-the-slider">
+<div class="slider" id="slider">
+  <div class="slide" id="slide">
+    <div class="wowcamp" id="first-wow-camp">
+  
+    </div>
+    
+    <div class="wowcamp">
+    
+    </div>
+    
+    <div class="wowcamp" >
+    
+    </div>
+
+    <div class="wowcamp" >
+    
+    </div>
+
+    <div class="wowcamp" >
+    
+    </div>
+
+    <div class="wowcamp" >
+    
+    </div>
+
+
+    <div class="wowcamp" >
+    
+    </div>
+
+    <div class="wowcamp" >
+    
+    </div>
+
+    <div class="wowcamp" >
+    
+    </div>
+    <div class="wowcamp" >
+    
+    </div>
+    <div class="wowcamp" >
+    
+    </div>
+    <div class="wowcamp" >
+    
+    </div>
+    <img class="item" src="http://via.placeholder.com/200x200?text=Product3">
+
+      
+      </div>
+
+      <div class="th-angle-left-arrow">
+  <i class="fa fa-angle-left pro-prev" aria-hidden="true" id="angle-left-button"></i>
+  </div>
+
+
+  <div class="th-angle-right-arrow">
+  <i class="fa fa-angle-right pro-next " aria-hidden="true" id="angle-right-button"></i>
+  </div>
+</div></div>
+
+
+<style>
+ 
+    </style>
+
+
+
+    <script>
+"use strict";
+
+productScroll();
+
+function productScroll() {
+  let slider = document.getElementById("slider");
+  let next = document.getElementsByClassName("pro-next");
+  let prev = document.getElementsByClassName("pro-prev");
+  let slide = document.getElementById("slide");
+  let item = document.getElementById("slide");
+
+  for (let i = 0; i < next.length; i++) {
+    //refer elements by class name
+
+    let position = 0; //slider postion
+
+    prev[i].addEventListener("click", function() {
+      //click previos button
+      if (position > 0) {
+        //avoid slide left beyond the first item
+        position -= 1;
+        translateX(position); //translate items
+      }
+    });
+
+    next[i].addEventListener("click", function() {
+      if (position >= 0 && position < hiddenItems()) {
+        //avoid slide right beyond the last item
+        position += 1;
+        translateX(position); //translate items
+      }
+    });
+  }
+
+  function hiddenItems() {
+    //get hidden items
+    let items = getCount(item, false);
+    let visibleItems = slider.offsetWidth / 210;
+    return items - Math.ceil(visibleItems);
+  }
+}
+
+function translateX(position) {
+  //translate items
+  slide.style.left = position * -410 + "px";
+}
+
+function getCount(parent, getChildrensChildren) {
+  //count no of items
+  let relevantChildren = 0;
+  let children = parent.childNodes.length;
+  for (let i = 0; i < children; i++) {
+    if (parent.childNodes[i].nodeType != 3) {
+      if (getChildrensChildren)
+        relevantChildren += getCount(parent.childNodes[i], true);
+      relevantChildren++;
+    }
+  }
+  return relevantChildren;
+}
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="the-button-under-s-t">
+  <h3>Join our news letter and get notified on <br>Your favourite campaigns</h3>
+
+  <form class="form-for-this">
+  <input type="email" placeholder="Email"><button class="email-join">JOIN</button>
+  </form>
+  </div>
+  
+  
+
+  
+
+
+
+
+
+
+<!--  FOOTER-->
+<div class="footer">
+  <div class="fo-2-that-is-second">
+<div class="first-footer">
+  <p class="About">Company</p>
+  <li><a href="">About</a></li>
+  <li><a href="{% url 'startups' %}">Investors</a></li>
+  <li><a href="{% url 'projects' %}">Campaigns</a></li>
+  <li><a href="https://diversefounders.slack.com">Community</a></li>
+  <li><a href="https://diversefounderssupport.zendesk.com/hc/en-us">Help Center</a></li>
+</div>
+
+
+
+
+<div class="first-footer">
+  <p class="About">MORE</p>
+  <li><a href="{% url 'termsofuse' %}">  Terms of Use</a></li>
+  <li><a href="{% url 'privacypolicy' %}">Privacy Policy</a></li>
+  <li><a href="{% url 'cookiepolicy' %}">  Cookie Policy</a></li>
+  <li><a href="">Trust & Safety</a></li>
+</div>
+
+</div>
+
+<div class="the-logo-for-the-footer">
+  <img src="{% static 'images/icon.png' %}" class="there-it-is-the-logo-mm-yap"><li class="shiy-logo-theme">DIVERSEFOUNDERS</li>
+</div>
+
+<div class="the-social-media-icons">
+<i class="fa fa-facebook-square" aria-hidden="true" onclick="facebook()"></i>
+
+<i class="fa fa-instagram" aria-hidden="true" onclick="istagram()"></i>
+
+<i class="fa fa-twitter" aria-hidden="true" onclick="twitter()"></i>
+</div>
+
+<script>
+  function istagram(){
+    window.open("https://instagram.com/diverse_founders?utm_medium=copy_link ", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=50%,left=100,width=700,height=700");
+    }
+    
+    function facebook(){
+        window.open("https://www.facebook.com/Diversefoundersofficial/", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=50%,left=100,width=700,height=700");
+    
+    }
+    
+    function twitter(){
+        window.open("https://twitter.com/diversefounded?s=09", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=50%,left=100,width=700,height=700");
+    
+    }
+</script>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Cookie Consent by https://www.TermsFeed.com -->
+<script type="text/javascript" src="https://www.termsfeed.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({"notice_banner_type":"simple","consent_type":"implied","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"open_preferences_center_selector":"#open_preferences_center"});
+});
+</script>
+
+<noscript>ePrivacy and GPDR Cookie Consent by <a href="https://www.TermsFeed.com/" rel="nofollow">TermsFeed Generator</a></noscript>
+<!-- End Cookie Consent by https://www.TermsFeed.com -->
+
+
+
+
+
+
+
+{% include 'contact/contactdriftapi.html' %}   
+{% block contact %}
+{% endblock contact %}
+
+
+
+
+
+
+
+<style>
+
+</style>
+
+{% endblock %}
+
+  {% endblock %}

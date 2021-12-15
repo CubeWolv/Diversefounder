@@ -1,0 +1,1261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Match with investors</title>
+    <meta name="description" content="Affiliate marketing">
+    <meta charset="UTF">
+    <meta name="author" content="Imran Abdu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="216000">
+    <link rel='icon' href="{% static 'images/icon.png' %}">
+    <link rel="stylesheet" href='{% static "css/investorprofileform.css" %}'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link ref="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/bk7sr0bb5ia1ri4yu2hd05sdqxqces0w22w3ciqwnoc60ep8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.4.2/chosen.min.css">
+    <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<style>
+
+</style>
+
+<div class="header-nav">
+    <a href="{% url 'startups' %}" class="the-logo" style="color:black;text-decoration: none;"> Diversefounders     <p class="for-investors">For investors</p></a>
+
+
+    <a class="save-b"><button type="button" class="btn btn-primary button-save"><i class="bi bi-box-arrow-right"></i> Save</button></a>
+</div>
+
+
+
+
+
+<div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+</div>
+<form id="regForm" action="">
+
+    <div class="tab">
+        <h1>Eligibility:</h1>
+        <h3 style="margin-top:30px;" class="are-you">Are you ...</h3>
+        <p class="are1"> - A Nordic based investor or an investor who are already investing in Nordic startups?</p>
+        <p class="are1">- A registered business with a company website or an individual with an updated Linkedin profile?</p>
+
+        <div class="form-check" id="formcheckvalidate">
+            <input type="checkbox" class="form-check-input input" id="materialUnchecked" value="1">
+            <label class="form-check-label" for="materialUnchecked" style="margin-top:5px" id="form-label-di">  I confirm I am eligible</label>
+        </div>
+        <p id="are-you-e" style="font-size:12px;color:red; margin-top:10px;"></p>
+    </div>
+
+
+
+    </div>
+
+    <div class="tab">
+        <h1>Profile setup:</h1>
+        <h3 style="margin-top:30px;">Are you ...</h3>
+
+
+
+        <p>Investor image *</p>
+        <p>Choose a square image with a solid background color of at least 100x100px</p>
+
+        <div class="avatar-upload">
+            <div class="avatar-edit">
+
+
+                <input type='file' id="imageUpload" name="profile_pic" accept=".png, .jpg, .jpeg" />
+                <label for="imageUpload"></label>
+
+            </div>
+            <div class="avatar-preview">
+                <div class="profile-user-img img-responsive img-circle" id="imagePreview" style="background-image: url('https://support.schoology.com/hc/article_attachments/360002354133/New_Default_Image.png'); background-size: 100% 100%;height: 100px;width:100px;">
+                </div>
+            </div>
+        </div>
+
+
+        <label>Investor name *</label>
+        <input placeholder="Your name" oninput="this.className = ''">
+
+        <label>Short description *</label>
+        <p><textarea placeholder="Enter description here" oninput="this.className = ''"></textarea>
+            <p>
+    </div>
+
+
+
+
+
+    <!-- One "tab" for each step in the form: -->
+
+    <div class="tab">
+        <h1>Profile setup:</h1>
+        <label><h4>Select countries you invest in</h4></label><br>
+        <p>Select one or more countries you invest in *</p>
+
+        <select class="multipleSelect2" multiple="true">
+      <option value="1">Denmark</option>
+      <option value="2">Finland</option>
+      <option value="3">Norway</option>
+      <option value="4">Sweden</option>
+  </select>
+
+
+
+  <p style="margin-top:40px">If you only invest in specific regions in a country, please specify below. Otherwise leave empty.</p>
+  <p><textarea placeholder="Eg Denmark:Copenhagen region only" oninput="this.className = ''"></textarea></p>
+
+
+        <p><</p>
+    </div>
+
+    <div class="tab">
+        <h1>Basic</h1>
+        <h4>Get the basics right and you are off to a better start:</h4>
+
+        <label>Type of investor *</label><br>
+        <select id="year">
+    <option value="hide">-- Year --</option>
+    <option value="2010">2010</option>
+    <option value="2011">2011</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+</select><br>
+
+        <label>Website or LinkedIn *</label>
+        <p><input type="url" placeholder="https://..." oninput="this.className = ''"></p>
+
+        <label>Select the investment tickets that you support, you can select multiple (optional)</label>
+        <select class="multipleSelect2" multiple="true">
+  <option value="1">&euro;  &lt;25k</option>
+  <option value="2">&euro; 25 - 50k</option>
+  <option value="3">&euro; 50 - 100k</option>
+  <option value="4">&euro; 100 - 500k</option>
+  <option value="4">&euro; 0.5 -1M</option>
+  <option value="4">&euro; 1 - 5M </option>
+  <option value="5">&euro;  &GT; 50k</option>
+</select>
+
+
+
+
+        <!--Stages-->
+        <h4 style="margin-top:70px;">Select the startup stages you invest in</h4>
+        <p>Let startups know in which stage you invest in so you’ll get the right match</p>
+
+
+
+
+        <br>
+
+
+
+
+        <div class="toggle-area">
+
+            <div class="read-more-toggle"><a style='font-weight: bold;text-decoration: none;' id="show-about" href="#"><b>Show More</b></a></div>
+            <div class="read-more-content hide">
+
+                <p class="ship">Idea</p>
+                <p class='ship2'>The business idea is validated and a prototype is in the making or ready to be launched.</p>
+
+                <p class="ship">Prototype or product</p>
+                <p class='ship2'>The validated prototype/product is launched with beta or real users.</p>
+
+                <p class="ship">Go-to-market</p>
+                <p class='ship2'>The validated product is launched with paying (retaining) customers.</p>
+
+                <p class="ship">Growth & expansion</p>
+                <p class='ship2'>The product is growing with paying retaining customers, proven scalability and unit economics.</p>
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <label>Select the investment tickets that you support, you can select multiple (optional)</label>
+        <select class="multipleSelect2" multiple="true">
+    <option value="1">Idea</option>
+    <option value="2">Product or prototype</option>
+    <option value="3">Go to market</option>
+    <option value="4">Growth and expansion<option>
+</select>
+
+    </div>
+
+
+
+
+
+    <div class="tab">
+        <h1>About (optional)</h1>
+        <h4 style="font-size: 16px;">Let startups know what makes a difference to you, what do you think is a good pitch, what your evaluation process is</h4>
+
+
+        <label style="margin-top: 100px;">About</label>
+
+
+        <div class="yo-text-area-editor">
+            <textarea id="get-text-area-for-e" placeholder="Here">
+        <br>
+        
+      </textarea>
+        </div>
+
+    </div>
+
+
+    <div class="tab">
+        <h1>Select industry</h1>
+        <h4 style="font-size: 16px;">Let startups know what makes a difference to you, what do you think is a good pitch, what your evaluation process is</h4>
+
+        <label>Choose one or more industries that you invest in</label><br>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="Advertising" name="advertise" value="Bacon">
+            <label class="form-check-label btn btn-danger" for="Advertising">Advertising</label>
+        </div>
+
+        <!-- Agriculture -->
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="Consumer goods" name="consumergoods" value="Beef">
+            <label class="form-check-label btn btn-danger" for="Consumer goods">Consumer Goods</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="education" name="education" value="education">
+            <label class="form-check-label btn btn-danger" for="education">Education</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="EnergyG" name="EnergyG" value="EnergyG">
+            <label class="form-check-label btn btn-danger" for="EnergyG">Energy and Greentech</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="fashionL" name="fashionL" value="fashionL">
+            <label class="form-check-label btn btn-danger" for="fashionL">Fashion and Living</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="fintech" name="fintech" value="fintech">
+            <label class="form-check-label btn btn-danger" for="fintech">Fintech</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="foodB" name="foodB" value="foodB">
+            <label class="form-check-label btn btn-danger" for="foodB">Food and  Beverage</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="gaming" name="gaming" value="gaming">
+            <label class="form-check-label btn btn-danger" for="gaming">Gaming</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="healthcareL" name="healthcareL" value="healthcareL">
+            <label class="form-check-label btn btn-danger" for="healthcareL">Healthcare & Life Science</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="hospitality" name="hospitality" value="hospitality">
+            <label class="form-check-label btn btn-danger" for="hospitality">Hospitality, Hosting</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="itS" name="itS" value="itS">
+            <label class="form-check-label btn btn-danger" for="itS">IT & Software</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="lot" name="lot" value="lot">
+            <label class="form-check-label btn btn-danger" for="lot">lot</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="jobsR" name="jobsR" value="Beef">
+            <label class="form-check-label btn btn-danger" for="jobsR">Jobs & Recruitment</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="legal" name="legal" value="legal">
+            <label class="form-check-label btn btn-danger" for="legal">Legal</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="manufacuring" name="manufacuring" value="manufacuring">
+            <label class="form-check-label btn btn-danger" for="manufacuring">Manufacuring</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="maritimeT" name="maritimeT" value="maritimeT">
+            <label class="form-check-label btn btn-danger" for="maritimeT">Maritime & Transport</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="marketplaceE" name="marketplaceE" value="marketplaceE">
+            <label class="form-check-label btn btn-danger" for="marketplaceE">Marketplace & eCommerce</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="mediaE" name="mediaE" value="mediaE">
+            <label class="form-check-label btn btn-danger" for="mediaE">Media & Entertainment</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="musicA" name="musicA" value="musicA">
+            <label class="form-check-label btn btn-danger" for="musicA">Music  & Audio</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="retail" name="retail" value="retail">
+            <label class="form-check-label btn btn-danger" for="retail">Retail</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="robotics" name="robotics" value="robotics">
+            <label class="form-check-label btn btn-danger" for="robotics">Robotics</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="saas" name="saas" value="saas">
+            <label class="form-check-label btn btn-danger" for="saas">SaaS</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="sales" name="sales" value="sales">
+            <label class="form-check-label btn btn-danger" for="sales">Sales & Marketing</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="sciE" name="sciE" value="sciE">
+            <label class="form-check-label btn btn-danger" for="sciE">Science & Engineering</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="service" name="service" value="service">
+            <label class="form-check-label btn btn-danger" for="service">Service</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="sports" name="sports" value="sports">
+            <label class="form-check-label btn btn-danger" for="sports">Sports</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="tel" name="tel" value="tel">
+            <label class="form-check-label btn btn-danger" for="tel">Telecommunications</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="travel" name="travel" value="travel">
+            <label class="form-check-label btn btn-danger" for="travel">Travel & Tourism</label>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <div class="tab">
+        <h1>Business model(s) you invest in</h1>
+        <p style="margin-top:30px;" class="are-you">Select one or more business models you invest in</p>
+
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="B2C" name="B2C" value="B2C">
+            <label class="form-check-label btn btn-danger" for="B2C">B2C</label>
+        </div>
+
+        <!-- Agriculture -->
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="B2B" name="B2B" value="B2B">
+            <label class="form-check-label btn btn-danger" for="B2B">B2B</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="Marketplace" name="Marketplace" value="Marketplace">
+            <label class="form-check-label btn btn-danger" for="Marketplace">Marketplace</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="B2G" name="B2G" value="B2G">
+            <label class="form-check-label btn btn-danger" for="B2G">B2G</label>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!--Contact-->
+    <div class="tab">
+        <h1>Contact preference (optional)</h1>
+        <p style="margin-top:30px;" class="are-you">Let startups know how they can reach out to you</p>
+
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="phone" name="phone" value="phone" class="checkbox-small" onclick="myPhone(this)">
+            <label class="form-check-label btn btn-danger" for="phone" id="label-for-small">Phone</label>
+        </div>
+
+        <!-- Agriculture -->
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="emailC" name="emailC" value="emailC" class="checkbox-small" onclick="myemail()">
+            <label class="form-check-label btn btn-danger" for="emailC" id="label-for-small">Email</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="WebsiteL" class="checkbox-small" name="WebsiteL" value="WebsiteL" onclick="mywebsite(this)">
+            <label class="form-check-label btn btn-danger" for="WebsiteL" id="label-for-small">Webiste Link</label>
+        </div>
+
+        <div class="form-check form-check-inline">
+            <input type="checkbox" id="freet" name="freet" value="freet" class="checkbox-small" onclick="myfreetext()">
+            <label class="form-check-label btn btn-danger" for="freet" id="label-for-small">Free Text</label>
+        </div>
+
+
+        <div id="contactphone">
+        <label>Enter Phone number</label>
+        <input type="number"  placeholder="Phone number">
+        </div>
+
+        <div id="contactemail">
+        <label>Enter Email</label>
+        <input type="email" placeholder="Email">
+        </div>
+
+        <div id="contactwebsiteurl">
+        <label>Enter Website url</label>
+        <input type="url" placeholder="https:// ">
+        </div>
+
+        <div id="contactfreetext">
+        <label>Enter Free text</label>
+        <textarea placeholder="Enter text here"></textarea>
+        </div>
+
+        <style>
+           #contactphone{
+            display:none;
+           }
+           #contactemail{
+            display:none;
+           }
+           #contactwebsiteurl{
+            display:none;
+           }
+           #contactfreetext{
+            display:none;
+           }
+
+        </style>
+    </div>
+<script>
+var phone=document.getElementById("Phone");
+var email=document.getElementById("emailC");
+var website=document.getElementById("websiteL");
+var freetext=document.getElementById("freet")
+var contactphone=document.getElementById("contactphone");
+var contactemail=document.getElementById("contactemail");
+var contactwebsite=document.getElementById("contactwebsiteurl");
+var contactfreetext=document.getElementById("contactfreetext");
+    function myPhone(cobx){
+ if (cobx.checked){
+   contactphone.style.display="block";
+ }else{
+     contactphone.style.display="none";
+ }
+    }
+
+    function myemail(){
+   if (email.checked){
+    contactemail.style.display="block";
+   }else{
+    contactemail.style.display="none";
+   }
+    }
+
+    function mywebsite(web){
+        if(web.checked){
+          contactwebsite.style.display="block";
+        }else{
+        contactwebsite.style.display="none";
+        }
+    }
+
+    function myfreetext(){
+        if (freetext.checked){
+        contactfreetext.style.display="block";
+        }else{
+         contactfreetext.style.display="none";
+        }
+    }
+
+</script>
+
+    </div><br>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <div style="overflow:auto;" style="margin-top:30px">
+        <div>
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-outline-primary">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary">Next</button>
+        </div>
+    </div>
+
+
+
+    <!-- Circles which indicates the steps of the form: -->
+
+
+</form>
+
+
+<style>
+    .are1 {
+        color: grey;
+    }
+    
+    #more {
+        display: none;
+    }
+    
+    #regForm {
+        background-color: rgb(243, 242, 242);
+        margin: 100px auto;
+        margin-top: 50px;
+        padding: 40px;
+        width: 70%;
+        min-width: 300px;
+        font-family: "poppins", sans-serif;
+    }
+    /* Style the input fields */
+    
+    label {
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    
+    input {
+        padding: 10px;
+        width: 100%;
+        font-size: 15px;
+        border: 1px solid silver;
+    }
+
+    
+     ::placeholder {
+        font-family: "poppins", sans-serif;
+    }
+    
+    h1 {
+        color: darkorange
+    }
+    
+    input:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(255, 145, 0) !important;
+        box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -moz-box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -webkit-box-shadow: 0 0 3px rgb(255, 145, 0)!important;
+    }
+    
+    input:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+    
+    #prevBtn {
+        float: left;
+    }
+    
+    #nextBtn {
+        float: right;
+    }
+    /* Mark input boxes that gets an error on validation: */
+    
+    input.invalid {
+        background-color: #ffdddd;
+    }
+    /* Hide all steps by default: */
+    
+    .tab {
+        display: none;
+    }
+    /* Make circles that indicate the steps of the form: */
+    
+    .step {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbbbbb;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+        opacity: 0.5;
+    }
+    /* Mark the active step: */
+    
+    .step.active {
+        opacity: 1;
+    }
+    /* Mark the steps that are finished and valid: */
+    
+    .step.finish {
+        background-color: #04AA6D;
+    }
+    /*image uploader*/
+    
+    .avatar-upload {
+        position: relative;
+        margin: 10px auto;
+    }
+    
+    .avatar-upload .avatar-edit {
+        position: absolute;
+        left: 80px;
+        z-index: 1;
+        top: -10px;
+    }
+    
+    .avatar-upload .avatar-edit input {
+        display: none;
+    }
+    
+    .avatar-upload .avatar-edit input+label {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        background: #ff7300a8;
+        border-radius: 20px;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all 0.2s ease-in-out;
+        margin-top: 0px;
+    }
+    
+    .avatar-upload .avatar-edit input+label:hover {
+        background: #f1f1f1;
+        border-color: #d6d6d6
+    }
+    
+    .avatar-upload .avatar-edit input+label:after {
+        content: '\f040';
+        font-family: 'FontAwesome';
+        color: black;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        text-align: center;
+        right: 0;
+        text-align: center;
+        margin: auto;
+    }
+    
+    .avatar-upload .avatar-preview {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    }
+    
+    .avatar-upload .avatar-preview>div {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    
+    textarea {
+        padding: 10px;
+        width: 100%;
+        font-size: 17px;
+        font-family: Raleway;
+        border: 1px solid silver;
+        resize: none;
+        height: 35vh;
+    }
+    
+    textarea ::placeholder {
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+    
+    textarea:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(255, 145, 0) !important;
+        box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -moz-box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -webkit-box-shadow: 0 0 3px rgb(255, 145, 0)!important;
+    }
+    
+    textarea:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+    
+    select {
+        width: 100%;
+        padding: 10px;
+        font-size: 15px;
+        border: 1px solid silver;
+    }
+    
+    select:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(255, 145, 0) !important;
+        box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -moz-box-shadow: 0 0 3px rgb(255, 145, 0) !important;
+        -webkit-box-shadow: 0 0 3px rgb(255, 145, 0)!important;
+    }
+    
+    select:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+    
+    .multipleChosen,
+    .multipleSelect2 {
+        width: 50vh;
+    }
+    /*wrapper*/
+    
+    .read-more-toggle {
+        display: inline;
+    }
+    /* unnecessary css below*/
+    
+    .hide {
+        display: none;
+    }
+    
+    a:hover {
+        transition: all .3s;
+    }
+    
+    .read-more-content {
+        background-color: white;
+        margin-left: 30px;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    .ship {
+        margin-top: 5px;
+        font-weight: bolder;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+    
+    .ship2 {
+        margin-top: 0px;
+        line-height: 0px;
+        font-weight: lighter;
+        font-size: 15px;
+    }
+    /*checkers*/
+    
+    .form-check-inline {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    
+    [type=checkbox] {
+        display: none;
+        justify-content: center;
+    }
+    
+    .form-check-label {
+        transition: all 144ms ease-in-out;
+        text-align: center;
+        width: 180px;
+        height: 100px;
+    }
+    
+    .form-check-label:hover {
+        transform: scale(0.975);
+    }
+    
+    .form-check-label::before {
+        display: inline-block;
+        margin-right: 2px;
+        transition: transform 144ms ease-in-out;
+        content: "+";
+        text-align: center;
+        margin-top: 20%;
+    }
+    
+    [type=checkbox]:not(:checked)+.form-check-label,
+    [type=checkbox]:not(:checked)+.form-check-label:hover {
+        background-color: transparent;
+        color: #e0e0e0;
+        border-color: silver;
+        color: black;
+        width: 180px;
+        height: 100px;
+    }
+    
+    [type=checkbox]:checked+.form-check-label::before {
+        transform: rotate(45deg);
+    }
+    
+    [type=checkbox]:checked+.form-check-label {
+        background-color: orange;
+        border: 1px solid yellow;
+    }
+    /*first checker*/
+    
+    #materialUnchecked {
+        display: block;
+    }
+    
+    #form-label-di {
+        transition: all 144ms ease-in-out;
+        text-align: left;
+        width: 200px;
+        height: 0px;
+    }
+    
+    #form-label-di:hover {
+        transform: scale(0.975);
+    }
+    
+    #form-label-di::before {
+        display: inline-block;
+        margin-right: 2px;
+        transition: transform 144ms ease-in-out;
+        content: " ";
+        text-align: center;
+        margin-top: 0vh;
+    }
+    
+    #materialUnchecked:not(:checked)+#form-label-di,
+    #materialUnchecked:not(:checked)+#form-label-di:hover {
+        background-color: transparent;
+        color: #e0e0e0;
+        border-color: silver;
+        color: black;
+        width: 200px;
+        height: 0px;
+    }
+    
+    #materialUnchecked:checked+#form-label-di::before {
+        transform: rotate(45deg);
+    }
+    
+    #materialUnchecked:checked+#form-label-di {
+        background-color: transparent;
+        border: 1px solid transparent;
+    }
+    /*Second woos*/
+    
+    #label-for-small {
+        transition: all 144ms ease-in-out;
+        text-align: center;
+        width: 120px;
+        height: 50px;
+    }
+    
+    #label-for-small:hover {
+        transform: scale(0.975);
+    }
+    
+    #label-for-small::before {
+        display: inline-block;
+        margin-right: 2px;
+        transition: transform 144ms ease-in-out;
+        content: "+";
+        text-align: center;
+        margin-top: 10%;
+        
+    }
+    
+    .checkbox-small:not(:checked)+#label-for-small,
+    .checkbox-small:not(:checked)+#label-for-small:hover {
+        background: transparent;
+        border-color: silver;
+        color: black;
+        width: 120px;
+        height: 50px;
+        font-size: 13px;
+    }
+    
+    .checkbox-small:checked+#label-for-small::before {
+        transform: rotate(45deg);
+    }
+    
+    .checkbox-small:checked+#label-for-small {
+        background-color: orange;
+        font-size: 13px;
+        border: 1px solid yellow;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+    
+    @media(max-width:700px) {
+        #regForm {
+        padding: 40px;
+        width: 95%;
+        min-width: 300px;
+        font-family: "poppins", sans-serif;
+    }
+    }
+    @media(max-width:500px){
+        #regForm {
+            width:100%;
+        }
+    }
+
+    @media(max-width:815px){
+    [type=checkbox]:not(:checked)+.form-check-label,
+    [type=checkbox]:not(:checked)+.form-check-label:hover {
+        background-color: transparent;
+        color: #e0e0e0;
+        border-color: silver;
+        color: black;
+        width: 100px;
+        height: 100px;
+    }
+    }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    var currentTab = 0; // Current tab is set to be the first tab (0)
+    showTab(currentTab); // Display the current tab
+
+    function showTab(n) {
+        // This function will display the specified tab of the form ...
+        var x = document.getElementsByClassName("tab");
+        x[n].style.display = "block";
+        // ... and fix the Previous/Next buttons:
+        if (n == 0) {
+            document.getElementById("prevBtn").style.display = "none";
+        } else {
+            document.getElementById("prevBtn").style.display = "inline";
+        }
+        if (n == (x.length - 1)) {
+            document.getElementById("nextBtn").innerHTML = "Submit";
+        } else {
+            document.getElementById("nextBtn").innerHTML = "Next";
+        }
+        // ... and run a function that displays the correct step indicator:
+        fixStepIndicator(n)
+    }
+
+    function nextPrev(n) {
+        // This function will figure out which tab to display
+        var x = document.getElementsByClassName("tab");
+        // Exit the function if any field in the current tab is invalid:
+        if (n == 1 && !validateForm()) return false;
+        // Hide the current tab:
+        x[currentTab].style.display = "none";
+        // Increase or decrease the current tab by 1:
+        currentTab = currentTab + n;
+        // if you have reached the end of the form... :
+        if (currentTab >= x.length) {
+            //...the form gets submitted:
+            document.getElementById("regForm").submit();
+            return false;
+        }
+        // Otherwise, display the correct tab:
+        showTab(currentTab);
+    }
+
+    function validateForm() {
+        // This function deals with validation of the form fields
+        var x, y, i, valid = true;
+        x = document.getElementsByClassName("tab");
+        y = x[currentTab].getElementsByClassName("input");
+        // A loop that checks every input field in the current tab:
+        for (i = 0; i < y.length; i++) {
+            // If a field is empty...
+            if (y[i].value == "") {
+                alert("shit")
+                    // add an "invalid" class to the field:
+                y[i].className += " invalid";
+                // and set the current valid status to false:
+                valid = false;
+            }
+        }
+
+        // If the valid status is true, mark the step as finished and valid:
+        if (valid) {
+            document.getElementsByClassName("step")[currentTab].className += " finish";
+        }
+        return valid; // return the valid status
+    }
+
+    function fixStepIndicator(n) {
+        // This function removes the "active" class of all steps...
+        var i, x = document.getElementsByClassName("step");
+        for (i = 0; i < x.length; i++) {
+            x[i].className = x[i].className.replace(" active", "");
+        }
+        //... and adds the "active" class to the current step:
+        x[n].className += " active";
+    }
+</script>
+
+
+
+
+
+
+
+
+<!--image uploader-->
+
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+                $('#imagePreview').hide();
+                $('#imagePreview').fadeIn(650);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $(document).ready(function() {
+        $("#imageUpload").change(function() {
+            readURL(this);
+            $('#imgConfirm').show();
+        });
+        $('#imgConfirm').click(function() {
+            $('#frmimgupld')[0].submit();
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function() {
+        $('.js-example-basic-multiple').select2();
+    });
+</script>
+
+
+
+
+<script>
+    $(document).ready(function() {
+        //Chosen
+        $(".multipleChosen").chosen({
+            placeholder_text_multiple: "What's your rating" //placeholder
+        });
+        //Select2
+        $(".multipleSelect2").select2({
+            placeholder: "Select" //placeholder
+        });
+    })
+</script>
+
+
+
+
+
+
+
+<script>
+    jQuery(document).ready(function() {
+        // Hide the extra content initially, using JS so that if JS is disabled, no problemo.
+        jQuery('.read-more-content').addClass('hide');
+
+        // Set up the toggle.
+        jQuery('.read-more-toggle').on('click', function() {
+            jQuery(this).nextAll('.read-more-content').toggleClass('hide');
+        });
+
+        jQuery('#show-about').text('Stages explained').click(function(e) {
+            e.preventDefault();
+            jQuery(this).text(jQuery(this).text() == 'Stages explained' ? "Stages explained" : "Stages explained");
+        });
+    });
+</script>
+
+
+
+
+
+<!--Editor-->
+<script>
+    tinymce.init({
+        selector: 'textarea#get-text-area-for-e',
+        height: 300,
+        width: 700,
+        plugins: "fullscreen",
+        menubar: "view",
+        toolbar: "fullscreen",
+        menubar: false,
+        images_upload_credentials: true,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor textcolor',
+            'searchreplace visualblocks code fullscreen',
+            'fullscreen',
+            'image imagetools',
+            'insertdatetime media table contextmenu paste code help wordcount',
+        ],
+        mobile: {
+            theme: 'mobile'
+        },
+        content_css: [
+            '//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+            '//www.tiny.cloud/css/codepen.min.css'
+        ],
+
+        skin: 'outside',
+
+        plugins: ['emoticons', 'image imagetools',
+            'insertdatetime media table contextmenu paste code help wordcount',
+            'fullscreen',
+            'link',
+            'media',
+            'table',
+            'preview',
+            'image code',
+            'tinymcespellchecker',
+            'template',
+        ],
+        toolbar: [' bold italic | alignleft aligncenter alignright alignjustify | outdent indent | pastetext | fullscreen'],
+        link_default_protocol: 'https',
+
+
+        image_title: true,
+        /* enable automatic uploads of images represented by blob or data URIs*/
+        automatic_uploads: true,
+        /*
+          URL of our upload handler (for more details check: https://www.tiny.cloud/docs/configure/file-image-upload/#images_upload_url)
+          images_upload_url: 'postAcceptor.php',
+          here we add custom filepicker only to Image dialog
+        */
+        file_picker_types: 'image',
+        /* and here's our custom image picker*/
+        file_picker_callback: function(cb, value, meta) {
+            var input = document.createElement('input');
+            input.setAttribute('type', 'file');
+            input.setAttribute('accept', 'image/*');
+
+            /*
+              Note: In modern browsers input[type="file"] is functional without
+              even adding it to the DOM, but that might not be the case in some older
+              or quirky browsers like IE, so you might want to add it to the DOM
+              just in case, and visually hide it. And do not forget do remove it
+              once you do not need it anymore.
+            */
+
+            input.onchange = function() {
+                var file = this.files[0];
+
+                var reader = new FileReader();
+                reader.onload = function() {
+                    /*
+                      Note: Now we need to register the blob in TinyMCEs image blob
+                      registry. In the next release this part hopefully won't be
+                      necessary, as we are looking to handle it internally.
+                    */
+                    var id = 'blobid' + (new Date()).getTime();
+                    var blobCache = tinymce.activeEditor.editorUpload.blobCache;
+                    var base64 = reader.result.split(',')[1];
+                    var blobInfo = blobCache.create(id, file, base64);
+                    blobCache.add(blobInfo);
+
+                    /* call the callback and populate the Title field with the file name */
+                    cb(blobInfo.blobUri(), {
+                        title: file.name
+                    });
+                };
+                reader.readAsDataURL(file);
+            };
+
+            input.click();
+        },
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+    });
+</script>

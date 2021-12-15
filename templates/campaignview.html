@@ -1,0 +1,335 @@
+{% extends "parts/nav.html" %} {% block head %}{% load static %}
+<head>
+    <title>{{data.campaignName}} | Diversefounders</title>
+    <meta name="description" content="Affiliate marketing">
+    <meta charset="UTF">
+    <meta name="author" content="Imran Abdu"> 
+    <link rel='icon' href="{% static 'images/icon.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="216000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href="{% static 'css/campaignview.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+{% endblock head %}
+
+<body>
+    {% block content %}
+
+
+
+
+{% if request.user == campaign.owner %}
+    <div class="alert alert-warning go-back-edit" role="alert">
+        <div class="left-del-edit">
+        <b><a href="{% url 'campaignsettings' campaign.id %}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i>  Edit</a></b>
+        <a   data-toggle="modal" data-target="#exampleModal">Delete   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+            <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+            <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+          </svg></a>
+        </div>
+    </div>
+
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete {{campaign.campaignName}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...It won't be recovered
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <a href="{% url 'delete' campaign.id%}" type="button" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+       {% endif  %}
+
+
+<img src={{data.Profile.profileimg.url}}>
+    <div class="first-heading-d">
+        <h1>{{data.campaignName}}</h1>
+        <h3>{{data.campaignTagline|safe}}</h3>
+    </div>
+<style>
+
+</style>
+
+
+    <div>
+        <div class="vid-df-campaign-tt">
+
+            <div onclick="startplayV()" id="startplayV">
+            <div class="playbutton" id="playvideo">
+                <i class="fa fa-play" aria-hidden="true" id="playbuttonimage"></i>
+            </div>
+             <div class="campaign-image">
+                <img src="{{campaign.pitchFile.url}}">
+                </div>
+                </div>
+
+            <iframe width="700vh" height="450vh" src="{{campaign.vidlink}}" id="video1">
+               
+                
+            </iframe>
+        </div>
+
+        <script>
+            
+     $("#playvideo").click(function(){
+      $("#video1")[0].src += "?autoplay=1";
+     });
+        </script>
+       
+        <script>
+    function startplayV(){
+ var frame=document.getElementById("startplayV")
+ frame.style.display="none"
+    }
+        </script>
+
+        <style>
+
+        </style>
+
+
+        <div class="Profile-theme-df-f-t-et">
+
+            <div class="ddddddddd-ddddddddd-ddddddd">
+                <h4>Funding</h4>
+                <p>{{data.category}}</p>
+            </div>
+ 
+            {{data.user.Profile.country}}
+            <div class="the-first-part-df-p-im">
+
+                <p class="the-full-name-of-use">By {{data.fullname | cut:'(' | cut:')' | cut:',' | cut:"'" }}</p>
+                <p style="font-weight: bold; margin:5px">{{data.country | cut:'(' | cut:')' | cut:',' | cut:"'" }}</p>
+            </div>
+
+
+            <h2 style="margin-top:30px;">$2,001</h2>
+            <p>
+                <p style="float:left;" class="days-left">pledged of {{data.campaignGoal}} goal</p>
+                <p style="float: right; margin-right:20px" class="days-left">0 backers</p>
+            </p>
+            <progress id="file" value="1" max="100"> 32% </progress>
+            <p class="days-left">0 days left</p>
+
+
+
+
+
+            <a href="{% url 'payment' campaign.id campaign.campaignName%}"><button style="margin-top: 30px;color:white;" class="back-it-button">Back it</button></a>
+
+            <div id="bookmark-save" style="margin-top: 30px;">
+                <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                <span class="tooltiptext">Save it for later</span>
+            </div>
+
+
+
+            <div class="links-tw-fa-em-shar">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </div>
+
+
+            <p style="font-size: 12px;margin-top:10px;" class="camp-ends-on">campaign ends on {{data.startdate}}</p>
+        </div>
+    </div>
+
+    </div>
+
+
+    <hr>
+
+
+      
+      <div id="navbar">
+        <a class="active" href="#story">Story</a>
+        <a href="#updates">Rewards</a>
+        <a href="#faq1">Faq</a>
+        <a href="#community">Community</a>
+        <button class="btn btn-success fnd-nav-bar">Fund this </button>
+      </div>
+
+
+
+<div class="the-story-upda-p">
+    <div class="page" id="faq1">
+        <p>{{data.faqs|safe}}</p>
+    </div>
+
+<div class="page" id="updates">
+<p>{{data.rewarddetails|safe}}</p>
+</div>
+
+
+<!--Community-->
+<!--Community-->
+<div class="page" id="community">
+    {% if user.is_authenticated %}
+        {% if not campaign.comments.all %}
+        <form class="form-for-adding-comment" method="post">
+            {% csrf_token %}
+                <div class="input-comment">
+                <img src="{{profile.profileimg.url}}" class="profile-image-r2">
+                <input type="text" class="add-comment" name="commentbody" placeholder="Add public comment" onclick="commentC()">
+                
+                
+                 </div>
+        
+                    <div class="buttons-for-p-an-c" id="buttons-for-c">
+                    <button class="post-comment btn btn-secondary">COMMENT</button>
+                    <p class="cancel-comment btn btn-secondary" value="submit" onclick="closeC()">CANCEL</p>
+                </div>
+            </form>
+
+        <div class="no-comment-comment">
+    <h4>no comment yet...... <span class="material-icons">chat</span></h4> 
+    <small>Be the first</small>
+    </div>
+
+    {% else %}
+    <form class="form-for-adding-comment" method="post">
+    {% csrf_token %}
+        <div class="input-comment">
+        <img src="{{profile.profileimg.url}}" class="profile-image-r2">
+        <input type="text" class="add-comment" name="commentbody" placeholder="Add public comment" onclick="commentC()">
+        
+        
+         </div>
+
+            <div class="buttons-for-p-an-c" id="buttons-for-c">
+            <button class="post-comment btn btn-secondary">COMMENT</button>
+            <p class="cancel-comment btn btn-secondary" value="submit" onclick="closeC()">CANCEL</p>
+        </div>
+    </form>
+
+
+    {% endif %}
+    {% else %}
+    <div class="alert alert-light login-for-comment">
+        <p><a href="{% url 'login' %}">Log</a> in or <a href="{% url 'signup' %}">sign</a> up to join the discussion.</p>
+    </div>
+    {% endif %} 
+    
+    
+
+
+
+    {% for comment in campaign.comments.all %}
+    <div class="comments-for-camp">timesince:comment.currentdate 
+
+     {{campaign.Profile.fullname}}
+    <b class="comment-name">{{comment.name}}</b>
+    <strong class="current-date-of-camp">{{comment.currentdate   }}</strong>
+    <p class="the-comments">{{comment.body}}</p>
+
+    </div>
+    
+    {% endfor %}
+
+    
+</div>
+
+<script>
+  var buttonc=document.getElementById("buttons-for-c")
+    function commentC(){
+     buttonc.style.display="block"
+    }
+
+    function closeC(){
+     buttonc.style.display="none"
+    }
+</script>
+
+
+
+<div class="page default" id="story">
+        <p style="color: green;">{{data.campaignPitch|safe|escape }}</p>
+        <br>
+    </div>
+</div>
+
+<style>
+    #story img{
+        width:100%;
+        height:55%
+    }
+
+    #stroy iframe{
+        width:100%;
+        height:50%;
+    }
+</style>
+
+
+<!--Perk selection-->
+
+<div class="perk-selection">
+    <p class="t45">Select A perk</p>
+    {% for  reward in campaign.rewards.all %}
+      <div class="rewards_perk">
+          <img class="reward-image" src="{{reward.rewardpicture.url}}">
+<div class="second-block">
+<p class="reward-title">{{reward.title}}</p>
+<p class="reward-price">$ {{reward.price}} USD</p>
+<div class="reward-details">
+<p  style="font-family: 'poppins',sans-serif">{{reward.rewarddetails | safe}}</p>
+</div>
+<b class="rem-reward">{{reward.total_available }} left</b>
+
+</div>
+ </div>
+  {% endfor %} 
+
+   
+    </div>
+
+
+    {% include 'parts/footer_account.html' %}
+    <div class="the-imos-like-h-l">
+        {% block footer %} {% endblock %}</div>
+
+    </div>
+
+
+
+
+
+
+
+    <script>
+        window.onscroll = function() {myFunction()};
+        
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        </script>
+    {% endblock %}

@@ -1,0 +1,158 @@
+{% extends "parts/nav.html" %}
+{% load static %}
+{% block head %}
+<!DOCTYPE html> 
+<html>
+    <head>
+<title>Login</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href='{% static 'images/icon.png' %}'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+    body{
+        margin:0px; 
+        padding:0px;
+    }
+    #form2{
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        top:20%;
+    }
+
+    #form2{
+      z-index: -1;
+  width:450px;
+  margin-top:60px; 
+  background-color:rgb(255, 255, 255);
+  padding-top:70px;
+  padding-bottom:30px;
+  border-radius: 5px; 
+  font-family: "poppins",sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    }
+
+    
+@media(max-width:450px){
+#form2{
+  width:100%;
+  margin-top:10px;
+  background-color:white;
+  font-family: "poppins",sans-serif;
+  border:none;
+  overflow-x: hidden;
+}
+
+
+  .f-v-lc1{
+width:90%;
+padding-top:15px;
+padding-bottom: 15px;
+border-radius: 5px;
+border:1px solid grey;
+margin-top:20px;
+margin-left:10px;
+margin-right:10px;
+  }
+.for-pass{
+  width:0px
+}
+}
+
+</style>
+</head>
+<body>
+
+{% endblock head %}
+{% block content %}
+
+
+
+
+<center>
+     <form id="form2"  method="POST" onsubmit="return ValidateForm2(this)">
+     {% if request.user.is_authenticated %}
+    
+
+   {% endif %}
+   
+     {% csrf_token %}
+     <h4 style="text-align: center;">Welcome back</h4>
+     <input type="text" class="f-v-lc" placeholder="Username" id="email2" name="username"><br>
+     <input type="password" class="f-v-lc" placeholder="Password" id="password2" name="password"><br>
+     <a href="{% url 'password_reset' %}" style="float: right;width:250px;font-size: 13px;cursor: pointer;" class="for-pass">Forgot your password?</a><br><br>
+     {% for message in messages %}
+     <p id="error2" class="ef" style="color:red;">{{message}}</p>
+     {% endfor %}
+
+     {% if request.GET.next %}
+      <input type="hidden" name="next" value="{{request.GET.next}}">
+     {% endif %}
+
+
+     <button class="f-v-lc" style="background-color: #A239ca;color:white">Log in</button>
+   
+     <h4 style="text-align: center;">OR</h4>
+
+
+     <a href="{% url 'google_login' %}" class="btn btn btn-light googlelogin"><img class="google-img" src="{% static 'images/google.png' %}">  Continue with Google</a>
+
+     
+     <p style="text-align: center;margin-top:30px;">Dont have an account? <b style='cursor: pointer;'><a href="{% url 'signup' %}"> Sign up</a></b></p>
+   </form>
+   </center>
+   
+   </div>
+   
+   
+   
+     <script type="text/javascript">
+       NProgress.start();
+       NProgress.done();
+       </script>
+   
+   
+   
+   <script>
+   
+   var passwordassist = document.getElementById("password2");
+   
+   passwordassist.addEventListener("focus", myFocusFunction, true);
+   passwordassist.addEventListener("blur", myBlurFunction, true);
+   
+   function myFocusFunction() {
+     document.getElementById("error2").innerHTML="Please fill in the fields above ";
+   }
+   
+   function myBlurFunction() {
+     document.getElementById("error2").innerHTML=""
+   }
+   
+   
+   
+   
+   
+   function ValidateForm2(){
+     var email2= document.getElementById("email2").value;
+   var password2 = document.getElementById("password2").value;
+   var error2 = document.getElementById("error2");
+   
+   if (email2  && password2 ==''){
+    error2.innerHTML="Please input the above fields correctly"
+    return false
+   }
+   else{
+     return true
+   }
+   }
+   
+   
+   </script>
+   
+
+   {% endblock %}

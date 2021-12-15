@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>{{rewards.id}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel='stylesheet' href="{% static 'css/createcampaign.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<body>
+
+  
+{% if messages %}
+{% for message in messages %}
+ <script>
+    
+         $(document).ready(function () {
+             $('.toast').toast('show');
+         });
+     
+ </script>
+ {% endfor %}
+{% endif %}
+
+
+
+
+
+<style>
+ .notification{
+   position: absolute;
+   top: 100px;
+   right: 1rem;
+}
+</style>
+
+
+  <style>
+    body{
+      font-family: "poppins",sans-serif;
+    }
+    @media(max-width:500px){
+  .add-reward{
+  height:10vh;
+  width: 100%;
+}
+.bi-plus-circle-dotted{
+ width:50px;
+ width:50px;
+}
+.table-for-rewards{
+  width:100%;
+}
+}
+
+.form-group input{
+padding:20px;
+
+}
+
+.estimated-date-of-delivery{
+  width:200px;
+  margin-left:10px;
+  padding:10px;
+}
+
+.est-left{
+  float:right;
+}
+
+
+.remove-add-reward-form{
+  font-size: 35px;
+}
+
+.modal-body{
+  position: relative;
+  left:50%;
+  transform: translate(-50%,0px);
+  width:90%;
+}
+
+  </style>
+
+    <div class="modal-content">
+      <div class="modal-header">
+        <b style="line-height: 30px;">{{rewards.title}}</b>
+      </div>
+      <div class="modal-body">
+
+        <form class="add-reward-form" method="post" action="{% url 'editreward' rewards.id %}" enctype="multipart/form-data">
+          {%csrf_token%}
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Title </label>
+            <input type="text" class="form-control" value="{{rewards.title}}" name="reward_title" id="reward-title" required maxlength="40" placeholder="Title of reward">
+            <p>Create a short title that clearly describes what your reward is. Max. character limit is 40.</p>
+          </div>
+
+
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Price</label>
+            <input type="number" class="form-control" value="{{rewards.price}}" name="reward_price" id="recipient-name" placeholder="10" required>
+            <p>Choose the amount you want backers to pay for this reward.</p>
+          </div>
+
+          <div class="form-group">
+            <label for="reward-dis" class="col-form-label">Reward description</label>
+            <textarea style="width:100%" rows="7" name="rewarddetails" class="form-control" id="reward-dis" placeholder="Because i care" required>{{rewards.rewarddetails}}</textarea>
+          </div>
+
+
+          <label>File upload</label><br>
+          <label class="label">
+            <input type="file"  onchange="loadFile(event)" name="rewardpicture"  value="{{reward.rewardpicture.url}}" accept="image/*" />
+          <span class="select-file" style="background-color: white; color:black;padding:5px;"><i class="fa fa-upload" aria-hidden="true"></i> UPLOAD</span>
+          
+          </label>
+          <div class="iasdfff-imadf-df-dfimage-prof"><img src="{{rewards.rewardpicture.url}}" id="output" width="300" ></div>
+
+
+            <div class="form-group">
+              <label for="recipient-name" class="col-form-label">Total Available</label>
+              <input type="number" class="form-control" name="total_available" value="{{rewards.total_available}}" required id="recipient-name" >
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="reward-dis" class="col-form-label">Shipping info</label>
+              <textarea style="width:100%" rows="7" class="form-control" name="shippinginfo" id="reward-dis"  required>{{rewards.shippinginfo}}</textarea>
+            </div>
+
+
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Estimated delivery</label><br>
+            <select class="estimated-date-of-delivery" name="month"  required>
+              <option value="{{rewards.month}}">{{rewards.month}}</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+
+            <select class="estimated-date-of-delivery est-left" name="year" required>
+              <option value="{{rewards.year}}">{{rewards.year}}</option>
+              <option value="2022">2022</option>
+              <option value="2021">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="2026">2026</option>
+            </select>
+
+          </div>
+
+      
+      </div>
+
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="reward" id="addrewardbutton">Add reward</button>
+      </div>
+      </form>
+    </div>
+  </div>
+
+
+  

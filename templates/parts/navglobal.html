@@ -1,0 +1,46 @@
+{% load static %}
+{% block head %}
+<head>
+<title>Diversefounders</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+
+<link rel='icon' href='{% static 'images/icon.png' %}'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+</head>
+{% endblock head %}
+<body>
+    <style>
+     body{
+         margin:0px;
+         padding:0px;
+     }
+
+     .navigation{
+         border-bottom:1px solid silver;
+     }
+
+     .logo{
+         padding:5px;
+         font-family: "Poppins",sans-serif;
+         font-size:25px;
+         margin-left:80px;
+         margin-top:10px;
+     }
+    </style>
+
+    <div class="navigation">
+    <h3 class="logo">DiverseFounders</h3>
+    </div>
+{% block content %}
+
+
+{% endblock %}

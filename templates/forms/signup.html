@@ -1,0 +1,218 @@
+{% extends "partsnav.html" %} {% load static %} {% block head %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Signup</title>
+    <meta name="description" content="Affiliate marketing">
+    <meta charset="UTF">
+    <meta name="author" content="Imran Abdu">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta http-equiv="refresh" content="216000">
+    <link rel='icon' href='{% static 'images/icon.png' %}'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+{% endblock head %} {% block content %}
+
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        font-family: "poppins", sans-serif;
+    }
+    
+    #form1 {
+        z-index: -1;
+        width: 450px;
+        margin-top: 60px;
+        background-color: rgb(255, 255, 255);
+        padding-top: 70px;
+        padding-bottom: 30px;
+        border-radius: 5px;
+        font-family: "poppins", sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+    }
+    
+    .f-v-lc1 {
+        width: 300px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid grey;
+        margin-top: 20px;
+        margin-left: 70px;
+        margin-right: 70px;
+        padding-left: 10px;
+        padding-right: 5px;
+    }
+    
+    .f-v-lc1:focus {
+        transition: 0.5s;
+        border: 1px solid rgb(45, 113, 180) !important;
+        box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -moz-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+        -webkit-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    }
+    
+    .f-v-lc1:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+    }
+    
+    @media(max-width:450px) {
+        #form1 {
+            width: 100%;
+            margin-top: 10px;
+            background-color: white;
+            font-family: "poppins", sans-serif;
+            border: none;
+            overflow-x: hidden;
+        }
+        .f-v-lc1 {
+            width: 90%;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            margin-top: 20px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .for-pass {
+            width: 0px
+        }
+    }
+    
+    .ef {
+        text-align: center;
+        color: grey;
+        font-size: 12px;
+    }
+</style>
+
+
+<div class="all-forms">
+
+    {% load socialaccount %}
+    <center>
+        <form id="form1" name="form" method="post" onsubmit="return ValidateForm1(this)">
+            {% csrf_token %}
+
+
+            <h4 style="text-align: center;">Sign up to join Diverse Founders</h4>
+            {{form}}
+            <p id="errorfix4" class="ef" style="color: red;">{{ message }}</p>
+
+
+            <p style="width:320px; margin-top:40px;"><input type="checkbox" id="checkbox-agree" onclick="checkboxValidate()" checked> I agree to the Terms of Use and have read and understand the Privacy Policy</p>
+            <p id="errorfix5" class="ef" style="color: red;">{{ message }}</p>
+
+            <button class="f-v-lc" style="background-color: #A239ca;color:white">Create Account</button>
+
+            <h4 style="text-align: center;">OR</h4>
+
+            <a href="{% url 'google_login' %}" class="btn btn-light googlelogin"><img class="google-img" src="{% static 'images/google.png' %}">  Continue with Google</a>
+
+
+            <p style="text-align: center;margin-top:30px;">Already have an account? <b style='cursor: pointer;'><a href="{% url 'login' %}"> Log In</a></b>
+            </p>
+
+
+        </form>
+    </center>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<script>
+    wholeform = document.getElementById('signup-and-login-forms')
+    loginform = document.getElementById('form2')
+
+    function showlogin() {
+
+        if (loginform.style.display = "none") {
+            loginform.style.display = "block"
+            wholeform.style.display = "block"
+        } else {
+            loginform.style.display = "none"
+            wholeform.style.display = "none"
+        }
+    }
+
+    var passwordassist = document.getElementById("password1");
+
+    passwordassist.addEventListener("focus", myFocusFunction, true);
+    passwordassist.addEventListener("blur", myBlurFunction, true);
+
+    function myFocusFunction() {
+        document.getElementById("errorfix4").innerHTML = "Password should be 6 to 18 character";
+    }
+
+    function myBlurFunction() {
+        document.getElementById("errorfix4").innerHTML = ""
+    }
+
+    function ValidateForm1(form) {
+        var fullname = document.getElementById('fullname').value
+        var username = document.getElementById('username').value
+        var email = document.getElementById('email1').value
+        var password = document.getElementById('password1').value
+        var errorfix4 = document.getElementById('errorfix4')
+
+
+        if (fullname == '') {
+            errorfix4.innerHTML = 'First name is required'
+            return false
+        } else if (username == '') {
+            errorfix4.innerHTML = 'Username is required'
+            return false
+        } else if (email == '') {
+            errorfix4.innerHTML = 'Email is required'
+            return false
+        } else if (password == '') {
+            errorfix4.innerHTML = 'Password is required'
+            return false
+        } else if (password.length < 6) {
+            errorfix4.innerHTML = 'Password is short'
+            return false
+        } else {
+            return true
+        }
+
+
+    }
+
+    function checkboxValidate(){
+        var checkbox =document.getElementById("checkbox-agree")
+        var errorfix5 = document.getElementById('errorfix5')
+        if (checkbox.checked){
+            errorfix5.innerHTML=("You must accept the agreement to continue")
+        }
+
+        else{
+            errorfix4.innerHTML=" "
+        }
+    }
+</script>
+
+
+
+
+
+
+
+{% endblock %}

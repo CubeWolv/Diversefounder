@@ -1,0 +1,538 @@
+.no-comment-comment{
+    position:relative;
+    left:50%;
+    transform: translate(-50%,50px);
+}
+
+.input-comment{
+ width:100%;
+ }
+
+.profile-image-r2{
+height:50px;
+width:50px;
+border:1px solid silver;
+padding:1px;
+border-radius: 100px;
+}
+
+
+.login-for-comment{
+    margin-top:30px;
+    text-align: center;
+}
+.current-date-of-camp{
+    color:rgb(116, 116, 116);
+    font-size:12px;
+    font-weight:100;
+}
+
+.comment-name{
+    font-size:14px
+}
+
+.comments-for-camp{
+    margin-top:30px;
+    margin-bottom:10px;
+}
+
+.the-comments{
+    font-size:15px
+}
+
+.form-for-adding-comment{
+    margin-top:80px;
+}
+
+.add-comment{
+    border:1px solid grey;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+    width:90%;
+}
+
+@media(max-width:600px){
+    .profile-image-r2{
+height:50px;
+width:50px;
+border:1px solid silver;
+padding:10px;
+border-radius: 100px;
+}
+
+.add-comment{
+    width:80%;
+}
+}
+
+.add-comment ::placeholder{
+    font-size:13px
+}
+
+.add-comment:focus {
+    transition: 0.5s;
+    border:2px solid black;
+    border-left:none;
+    border-right:none;
+    border-top:none;
+}
+
+.buttons-for-p-an-c{
+    margin-top:20px;
+    width:90%;
+    margin-bottom:100px;
+    display:none;
+}
+
+.post-comment{
+    float:right;
+}
+
+.cancel-comment{
+    float:right;
+    margin-right:20px;
+    background: transparent;
+    border:transparent;
+}
+
+.add-comment:focus {
+    outline-offset: 0px !important;
+    outline: none !important;
+}
+
+
+.reward-title{
+    font-size:24px;
+      }
+  .second-block{
+  margin-left:20px;
+      }
+  
+  .reward-details{
+  width:95%;
+  max-height: 146px;
+  overflow: hidden;
+  }
+  
+  .reward-image{
+      width:100%;
+      height:35vh;
+  }
+  
+  .rem-reward{
+      font-size: 15px;
+  }
+  
+  .reward-price{
+      font-size:25px;
+  }
+  
+  .perk-selection{
+  float:right;
+  width:23%;
+  margin-top:50px;
+  margin-right:50px;
+  margin-bottom:100px;
+      }
+  
+      .rewards_perk{
+          min-height:50vh;
+          width:100%;
+          margin-top:20px;
+          border:1px solid silver;
+      }
+  
+      .rewards_perk:hover{
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          cursor:pointer;
+      }
+
+
+      .campaign-image{
+        width:100%;
+        height:100%;
+        position: absolute;
+    }
+    .campaign-image img{
+        width:100%;
+        height:100%;
+        position: absolute;
+        cursor: pointer;
+    }
+ 
+    .playbutton{
+        z-index:10;
+        width:70px;
+        height:70px;
+        background: white;
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        border-radius:100px;
+        cursor: pointer;
+    }
+ 
+    .vid-df-campaign-tt:hover .playbutton{
+        transition:0.5s;
+     background-color:rgba(255, 68, 0, 0.863);
+     color:white;
+    }
+ 
+ 
+    #playbuttonimage{
+        font-size:30px;
+        position: absolute;
+        left:51%;
+        top:50%;
+        transform:translate(-50%,-50%)
+ 
+    }
+    @media(max-width:400px){
+     .vid-df-campaign-tt iframe{
+           border:1px solid silver;
+           z-index:-10px
+       }
+ 
+       .campaign-image{
+        width:95%;
+        position: absolute;
+        left:50%;
+        transform: translate(-50%,0px);
+        z-index: 3;
+    }
+    .campaign-image img{
+        z-index:3;
+    }
+    }
+
+
+
+
+
+    .footer-for-profile {
+        margin-top:10px;
+      }
+
+        .first-heading-d {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .first-heading-d h3 {
+            font-size: 16px;
+            font-weight: lighter;
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .vid-df-campaign-tt {
+            margin-left: 70px;
+            margin-top: 40px;
+            float: left;
+            position:relative;
+        }
+        
+        .vid-df-campaign-tt iframe {
+            border: none;
+        }
+        
+        .Profile-theme-df-f-t-et {
+            float: right;
+            width: 38%;
+            margin-top: 30px;
+        }
+        
+        .Profile-theme-df-f-t-et progress {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .Profile-theme-df-f-t-et button {
+            border: none;
+            width: 200px;
+            background-color: darkorange;
+            padding: 12px;
+            font-size: 20px;
+            border-radius: 4px;
+        }
+        
+        .Profile-theme-df-f-t-et button:hover {
+            background-color: rgb(255, 115, 0);
+        }
+        /*Tool tip*/
+        
+        .Profile-theme-df-f-t-et i {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        
+        #bookmark-save {
+            cursor: pointer;
+            position: relative;
+            display: inline-block;
+        }
+        
+        #bookmark-save:hover {
+            color: darkorange;
+        }
+        
+        #bookmark-save .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 3px;
+            padding: 5px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -40px;
+        }
+        
+        #bookmark-save .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: black transparent transparent transparent;
+        }
+        
+        #bookmark-save:hover .tooltiptext {
+            visibility: visible;
+        }
+        
+        .links-tw-fa-em-shar {
+            margin: 0px;
+            margin-top: 45px;
+            float: right;
+            margin-right: 20px;
+        }
+        
+        .links-tw-fa-em-shar i {
+            margin-left: 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+        
+        .links-tw-fa-em-shar i:hover {
+            color: silver
+        }
+        
+        .days-left {
+            font-family: "Poppins", sans-serif;
+        }
+        
+        .ddddddddd-ddddddddd-ddddddd {
+            display: inline-flex;
+        }
+        
+        .ddddddddd-ddddddddd-ddddddd p {
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: rgb(9, 255, 0);
+            border-radius: 3px;
+            padding: 1px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+
+
+
+        /*Pitch*/
+
+#navbar {
+  overflow: hidden;
+  clear:both;
+  background-color:white;
+  border-bottom:2px solid silver;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "poppins",sans-serif;
+}
+
+#navbar a:hover {
+  border-bottom:1px solid grey;
+  color: black;
+}
+
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.fnd-nav-bar{
+    float:right;
+    margin-right:20px;
+    width:10%;
+    margin-top:10px;
+}
+
+
+/*Pages*/
+
+.page {
+    display:none;
+        clear: both;
+            font-family: "poppins",sans-serif;
+            width:50%;
+            margin-left:5%;
+            font-size:16px;
+            float:left;
+            margin-bottom:50%;
+      }
+      
+      
+      .default {
+        display:block;
+      }
+      
+      :target {
+        display:block; 
+      }
+      
+      :target ~ .default {
+        display:none;
+      }
+
+      .vid-df-campaign-tt iframe{
+          border:1px solid silver;
+      }
+
+      @media(max-width:1300px){
+        .vid-df-campaign-tt iframe{
+          width:90vh;
+          height:50vh;
+      }
+      .vid-df-campaign-tt{
+         margin-left:10px;
+        }
+    
+    }
+
+
+
+    .t45{
+        font-size:16px;
+    }
+
+
+
+    @media(max-width:990px){
+        .vid-df-campaign-tt iframe{
+        width:80vh;
+          height:45vh;
+        }
+
+        .page{
+            width:95%
+        }
+    }
+
+      @media(max-width:900px){
+        .vid-df-campaign-tt{
+         margin-left:10px;
+         float:none;
+         width:100%;
+        }
+
+        .vid-df-campaign-tt iframe{
+          width:80%;
+          height:55vh;
+          position: relative;
+         left: 50%;
+         transform: translate(-50%,0px);
+      }
+
+      .Profile-theme-df-f-t-et{
+           float:none;
+           width:90%;
+           position: relative;
+           left:50%;
+           transform: translate(-50%,0px);
+      }
+
+      #bookmark-save{
+          display:none;
+      }
+      .links-tw-fa-em-shar{
+          display:none;
+      }
+
+      .camp-ends-on{
+          display:none;
+      }
+
+      .perk-selection{
+          display:none;
+      }
+      }
+
+      @media(max-width:600px){
+        .Profile-theme-df-f-t-et button{
+            width:90%;
+            position:relative;
+            left:50%;
+            transform: translate(-50%,0px);
+        }
+      }
+      @media(max-width:500px){
+      .fnd-nav-bar{
+        display:none
+      }
+      .vid-df-campaign-tt iframe{
+        width:95%;
+          height:40vh;
+          margin-left:0px;
+        }
+        .vid-df-campaign-tt {
+          margin-left:0px;
+        }
+    }
+
+    .img-fluid{
+        height:40px;
+    }
+
+    .go-back-edit{
+        font-family: "poppins",sans-serif;
+        font-size:14px;
+        height:50px;
+    }
+    .go-back-edit a{
+         cursor:pointer;
+         color:black;
+         margin-right:20px;
+    }
+
+    .go-back-edit a:hover{
+         color:rgb(85, 85, 85);
+    }
+
+    .left-del-edit{
+        float:right;
+    }

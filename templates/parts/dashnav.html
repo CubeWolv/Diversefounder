@@ -1,0 +1,99 @@
+{% extends "parts/nav.html" %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+{% block head %}
+
+<head>
+  <title>{{request.user}} | Dashboard</title>
+  <meta name="description" content="Affiliate marketing">
+  <meta charset="UTF">
+  <meta name="author" content="Imran Abdu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+  <meta http-equiv="refresh" content="216000">
+  <link rel='icon' href="{% static 'images/icon.png' %}">
+  <link rel='stylesheet' href="{% static 'css/dashnav.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: "poppins", sans-serif;
+    }
+
+    #dashboardlink {
+      border-bottom: 3px solid purple;
+    }
+
+    .div-12 a{
+      color:rgb(48, 48, 48)
+    }
+  </style>
+</head>
+{% endblock head %}
+
+{% block content %}
+<style>
+
+</style>
+
+
+
+
+{% if request.user.is_authenticated %}
+<p style="margin-left:30px;margin-top:25px">{{request.user}}'s Dashboard </p>
+{% endif %}
+<hr>
+
+<div class="div-12">
+  <div class="shitnavbar">
+    <a href="{% url 'dashboard' %}" class="navigator" id="dashboardlink">Profile</a>
+    <a href="{% url 'editprofile' %}" class="navigator" id="editprofile"> Edit profile</a>
+    <a href="{% url 'fundingprofile' %}" class="navigator" id="fundingprofile">Funding Profile</a>
+    <a href="{% url 'campaigns' %}" class="navigator" id="campaigns">My campaigns</a>
+    <li class="navigator"></li>
+  </div>
+</div><br>
+
+
+
+
+
+
+
+<style>
+  @media (max-width: 1000px) {
+    #niga {
+      display: block;
+    }
+
+    .timber {
+      display: block;
+    }
+  }
+</style>
+
+<div>
+  {% block everything %}
+  {% endblock %}
+</div>
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+{% endblock %}

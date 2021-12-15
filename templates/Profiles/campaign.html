@@ -1,0 +1,165 @@
+{% extends "parts/dashnav.html" %}
+{% load static %}
+{% block head %}
+<title>{{request.user}} | Dashboard</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/dashnav.css' %}">
+<link rel="stylesheet" href="{% static 'css/campaign.css' %}">
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+  body{
+    font-family: "poppins",sans-serif;
+    font-weight: lighter;
+    
+  }
+</style>
+{% endblock head %}
+
+<body>
+
+
+
+  {% block everything %}
+  {% if campaigns%}
+  {%for campaign in campaigns%}
+
+
+
+  <div class="your-campaign-container">
+
+<div class="your-campaign-image">
+  <img src={{campaign.pitchFile.url}} alt="campaign image">
+</div>
+
+<div class="your-campaign-name">
+  <b>Name</b>
+  <h4>{{campaign.campaignName}}</h4>
+</div>
+
+<div class="your-campaign-date">
+  <b>Created on</b>
+  <p>{{campaign.currentdate}} </p>
+</div>
+
+
+
+<div class="your-campaign-actions">
+  <b class="campaign-actions">Actions</b>
+  <br>
+
+  <div tabindex="0" class="menu2"> 
+  <svg xmlns="http://www.w3.org/2000/svg" id="show-more-options-dt"  width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+    <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+  </svg>
+  <div class="menu-dropdown">
+    <li><a href="{% url 'campaignsettings' campaign.id %}"><i class="fa fa-eye" aria-hidden="true"></i> Edit</a></li>
+     <li style="margin-top:5px;"><a href="{% url 'campaignviewprivate' campaign.id campaign.campaignName %}"><i class="fa fa-pencil-square" aria-hidden="true"></i> Preview</li></a><br>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<style>
+  .modal-content{
+   width:100vh;
+  }
+  .modal-footer a{
+  display:inline;
+  }
+
+  @media(max-width:500px){
+    .modal-content{
+   width:55vh;
+  }
+
+  }
+</style>
+
+
+
+
+
+  {% endfor%}
+  {% else%}
+  <h2 class="timo">You don't have any campaigns yet</h2>
+  {% endif %}
+
+
+<div class="adf-d-e-re-df-v-b">
+  <a style="color:white;" href="{% url 'createcampaign' %}" target="_blank" rel="noreferrer noopener">
+    <button class="btn btn-primary c-button">CREATE CAMPAIGN</button></a>
+    </div>
+
+
+  
+
+
+
+
+<script>
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementById("close");
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function closemodel(){
+var closemod=document.getElementById('closem')
+modal.style.display = "none";
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'parts/footer_account.html' %}
+{% block footeraccount %}
+{% endblock footeraccount %}
+
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  {% block head %}
+    <head>
+<title>Start a campaign</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel='stylesheet' href="{% static 'css/dashnav.css' %}">
+<link rel='stylesheet' href="{% static 'css/settings.css' %}">
+<link rel='stylesheet' href="{% static 'css/createcampaign.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+<script src="https://cdn.tiny.cloud/1/bk7sr0bb5ia1ri4yu2hd05sdqxqces0w22w3ciqwnoc60ep8/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="{% static 'js/country.js' %}"></script>
+<script src="{% static 'js/editor.js' %}"></script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+  .prdas-kdf-im-d{
+   height:150px;
+   position:absolute;
+   left:50%;
+   top:30%;
+   transform: translate(-50%,-50%);
+  }
+</style>
+
+    
+</head>
+{% endblock head %}
+
+
+{% block content %}
+
+
+  
+
+  <style>
+    @media (max-width: 1000px) {
+      #niga{
+        display: block;
+      }
+      .timber{
+        display: block;
+      }
+    }
+
+    .navigation-bar{
+      height:60px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    }
+
+    .navigation-logo-image{
+    margin-top:15px;
+    margin-left:20px;
+    }
+
+    .go-back{
+      margin-top:20px;
+      position:absolute;
+      margin-left:40px;
+    }
+
+    a {
+      color:grey;
+    }
+
+    a:hover{
+      color:rgb(134, 134, 134)
+    }
+
+    @media(max-width:500px){
+      .go-back{
+      display:none;
+    }
+    }
+
+    .preview-btn{
+      float:right;
+      margin-right: 30px;
+      margin-top:15px;
+      padding:6px;
+      width:150px;
+      box-shadow: none;
+      background-color: rgb(255, 94, 0);
+      border:1px solid rgba(255, 174, 0, 0.527);
+    }
+
+    .preview-btn:hover{
+      background-color: rgb(255, 102, 0);
+      border:1px solid rgb(255, 174, 0);
+    }
+
+    @media(max-width:400px){
+      .preview-btn{
+      width:100px;
+      margin-right: 5px;
+
+    }
+    }
+  </style>
+
+<div class="navigation-bar">
+  <img src="{% static 'images/logoword.png' %}" class="navigation-logo-image">
+  <span class="go-back"><a href="{% url 'campaigns' %}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Go back</a></span>
+    
+
+<a href=" {% url 'campaignviewprivate' campaign.id campaign.campaignName %}" class="preview-btn btn btn-primary">Preview</a>
+</div>
+
+
+{% block capcontent %}
+{% endblock %}
+
+
+
+{% endblock %}

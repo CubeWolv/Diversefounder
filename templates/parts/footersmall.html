@@ -1,0 +1,47 @@
+{% load static %}
+{% block footersm %}
+
+<style>
+.footer{
+border-top:1px solid rgb(184, 184, 184);
+padding:20px;
+font-family: "poppins",sans-serif;
+}
+
+.footer li{
+    list-style: none;
+    display:inline-block
+}
+
+.left-footer{
+color:rgb(102, 102, 102);
+font-size:18px;
+}
+
+a{
+    color:rgb(90, 90, 90)
+}
+
+a:hover{
+    color:rgb(34, 34, 34)
+}
+
+.right-foot{
+float:right;
+}
+
+@media(max-width:500px){
+.footer li{
+    list-style: none;
+    display:inline-block;
+    font-size:13px
+}
+}
+</style>
+
+<div class="footer">
+<li class="left-footer">Diversefounders</li>
+<li class="right-foot"><a href="{% url 'privacypolicy' %}">Privacy</a> & <a href="{% url 'cookiepolicy' %}">Cookie Policy</a></li>
+</div>
+
+{% endblock footersm %}

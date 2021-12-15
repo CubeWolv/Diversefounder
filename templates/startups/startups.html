@@ -1,0 +1,135 @@
+{% include  'startups/base/head.html' %}
+ {% load static %}
+{% block head %}
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+{% endblock head %}
+
+
+ {% block content %}
+<style>
+    body{
+        width: 100vw; min-height: 100vh;
+  background-image: url("{% static 'images/city1.svg' %}");
+  background-size: cover;
+    }
+
+
+
+
+ .div-1{
+    width:70%;
+    margin-top:10%;
+    }
+  
+    .div-1 h1{
+      font-size: 65px;
+      font-family: 'Montserrat', sans-serif;
+  }
+  
+  .div-1 p{
+     font-size:17px;
+     font-weight: bold;
+     font-family: "Poppins",sans-serif;
+     letter-spacing: 1px;
+     margin-top:20px;
+     color:black
+  }
+
+  a{
+      text-decoration: none;
+      color:black;
+  }
+
+  a:hover{
+      text-decoration: none;
+      color:black;
+  }
+  
+  
+  .the-buttons-for-c-a-s{
+      margin-top:50px;
+  }
+  
+  .the-buttons-for-c-a-s a{
+      padding-top:13px;
+      padding-bottom:13px;
+      border-radius: 30px;
+      padding-left:75px;
+      padding-right:75px;
+      font-weight: bold;
+  }
+  
+  .f-in{
+   background-color:rgba(255, 255, 255, 0.781);
+   border:none;
+  }
+  .s-p-s{
+   margin-left: 60px;
+   border:none;
+   background-color: rgba(65, 65, 65, 0.678);
+   color:white;
+  }
+  
+  @media(max-width:600px){
+    .the-buttons-for-c-a-s a{
+      padding-top:13px;
+      display:inline-block;
+  }
+  
+  .div-1 h1{
+  font-size: 35px;
+  }
+  
+  .div-1 p{
+  margin-top:30px;
+  }
+
+
+  .s-p-s{
+      margin-top:20px;
+   margin-left:0px;
+  }
+
+}
+
+  header{
+      background-color: transparent;
+  }
+</style>
+
+
+
+<center>
+            <div class="div-1">
+                <h1>Connect Your startups  With Amazing  Investors  </h1>
+                <p>Join Diversefounders and Discover startups . Profile your startup to investors or browse and connect directly
+            
+            </div>
+            
+                   <div class="the-buttons-for-c-a-s">
+                    <a href="{% url 'investors' %}"  class="f-in"> Find Investors</a>
+                    <a href="{% url 'findstartups' %}" class="s-p-s">Find Startup</a>
+            
+                </div>
+
+</center>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

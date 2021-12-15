@@ -1,0 +1,58 @@
+{% extends "parts/dashnav.html" %}
+{% load static %}
+{% block head %}
+<title>{{request.user}} | Dashboard</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/dashnav.css' %}">
+<style>
+.timo{
+position:absolute;
+color:grey;
+top:50%;
+text-align: center;
+width:100%;
+z-index: -1;
+}
+
+#fundingprofile{
+  border-bottom: 3px solid purple;
+
+}
+
+@media (max-width:1000px) {
+  .timo{
+    font-size: 20px;
+    width:100%;
+
+  }
+}
+
+
+</style>
+
+{% endblock head %}
+
+<body>
+
+
+{% block everything %}
+<h2 class="timo">You have not yet funded any compaines yet</h2>
+
+
+
+
+{% include 'parts/footer_account.html' %}
+{% block footeraccount %}
+{% endblock footeraccount %}
+
+
+{% endblock %}

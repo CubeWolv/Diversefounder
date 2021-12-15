@@ -1,0 +1,502 @@
+
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  @media(max-width:1020px){
+  body{
+  background-image: none;
+
+  }
+  }
+  
+  header {
+    background-color: #141b25;
+  }
+  
+  
+  header {
+    background-color:white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    font-family: 'Poppins',sans-serif;
+  }
+  
+  .logo {
+    color: black;
+    line-height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 30px;
+    font-family: "AstroSpace", sans-serif;
+  }
+  
+  .navlinks {
+    list-style: none;
+    float: right;
+    line-height: 60px;
+    margin: 0;
+    padding: 0;
+    margin-right:30px;
+  }
+  
+  .navlinks li {
+    display: inline-block;
+    margin: 0px 10px;
+  }
+  
+  a:hover{
+    text-decoration: none;
+  }
+  
+  .navlinks li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 13px;
+    transition: all 0.3s linear 0s;
+  }
+  
+  .navlinks li a:hover {
+    color: #7ebcb9;
+    padding-bottom: 7px;
+  }
+  
+  
+  
+  #check {
+    display: none;
+  }
+  
+  .menu-btn {
+    font-size: 25px;
+    color: white;
+    float: right;
+    line-height: 40px;
+    margin-right: 40px;
+    display: none;
+    cursor: pointer;
+  }
+  
+  .morgen{
+    display: none;
+  }
+  
+  @media (max-width: 820px) {
+    .menu1{
+    display: none;
+  }
+    .navlinks {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      text-align: center;
+      transition: all 0.5s;
+      right: -100%;
+      background: #222831;
+      margin-right: 0px;
+      z-index: 30;
+      
+    }
+    .morgen{
+      display: block;
+    }
+  
+    .navlinks li {
+      display: block;
+    }
+  
+    .navlinks li a {
+      font-size: 20px;color:white;
+    }
+  
+    .navlinks li a:hover {
+      border-bottom: none;
+    }
+  
+    .menu-btn {
+      display: block;
+    }
+  
+    #check:checked ~ .navlinks {
+      right: 0;
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .logo {
+      margin-left: 10px;
+      font-size: 20px;
+    }
+  
+    .menu-btn {
+      margin-right: 10px;
+      font-size: 25px;
+    }
+  
+    .menu-btn:focus {
+      color: blue;
+    }
+  }
+  
+  
+  
+  /*drop down */
+  .igm-profile{
+    height: 25px;
+    width:25px;
+    border-radius: 100px;
+    }
+  
+  
+    .ll{
+      cursor: pointer;
+    }
+    
+    .menu1 {
+      position: relative;
+      display: inline-block;
+      z-index: 2;
+      padding:0px;
+      margin:0px;
+      outline: 0;
+      text-align:left;
+      border-left:1px solid silver;
+      padding-left:30px;
+    }
+  
+    @media (max-width: 820px) {
+  .menu1{
+    display: none;
+  }
+  }
+    
+    
+    /* style for the button */
+    .menu1:before {
+        background-size:20px;
+        color:white;
+        padding: 5px 10px;
+        border: 1px solid #555;
+        border-radius:3px;
+    }
+    
+    .menu1:focus { pointer-events:none; }
+    
+    /* If :focus detected the dropdown menu is displayed by making it visible */
+    .menu1:focus .menu-dropdown1 { opacity:1; visibility:visible; }
+    
+    /* style for the dropdown box */
+    .menu-dropdown1 {
+        background-color: #364656;
+        width: 180px;
+        margin:3px 0 0 0;
+        padding: 10px;
+        border-radius:5px;
+        border-radius:3px;
+        pointer-events: auto;
+        position: absolute;
+        right:5px;
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 1s;
+        background: #ffffff;
+        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+       }
+    
+    /* style the links in the dropdown */
+    .menu-dropdown1 a {
+        background:transparent;
+        border:none;
+        outline:0;
+        display:block;
+        color:black;
+        text-decoration:none;
+        width:160px;
+        padding-top:3;
+        padding:0px;
+        line-height: 40px;
+    } 
+    
+    .menu-dropdown1 a:hover{
+      color:orange
+    }
+
+    #sea-icon{
+      margin-left:20px;
+      cursor: pointer;
+    }
+
+    .search-section{
+    position: fixed;
+    width:100%;
+    top:0px;
+    background-color: white;
+    height:60px;
+    z-index:30;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    display: none;
+    }
+
+    #remove-searchbar{
+      float:right;
+      font-size:30px;
+      margin-top:0.5%;
+      margin-right:20px;
+      cursor: pointer;
+    }
+
+    .searchbar {
+  width: 95%;
+  float:left;
+  border:none;
+  box-sizing: border-box;
+  font-size: 16px;
+  background-color: white;
+  background-image: url("{% static 'images/search.png' %}");
+  background-position: 10px 15px; 
+  background-repeat: no-repeat;
+  padding-top:18px;
+  padding-bottom:10px;
+  padding-left:60px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+@media(max-width:860px){
+  .searchbar {
+    width:90%;
+  }
+}
+
+@media(max-width:460px){
+  .searchbar {
+    width:90%;
+  }
+  #remove-searchbar{
+    margin-top:8px;
+    margin-right:4px;
+  }
+}
+
+
+
+.searchbar:focus {
+  transition: 0.5s;
+  border:none !important;
+  box-shadow: none !important;
+
+  }
+  
+  .searchbar:focus{
+  outline-offset: 0px !important;
+  outline: none !important;
+  }
+
+
+
+.hr1{
+border:1px solid rgb(197, 197, 197);
+margin-bottom: 0px;
+}
+
+
+
+.signup-and-login-forms{
+  width:100%;
+   height:110%;
+  position: absolute;
+  top:0vw;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+
+
+.google-img {
+    width: 20px;
+}
+
+.googlelogin{
+  border:1px solid silver;
+  width:300px;
+  padding:10px  10px
+}
+
+@media(max-width:450px){
+  .googlelogin{
+  width:90%;
+  }
+}
+
+
+
+.f-v-lc{
+width:300px;
+padding-top:10px;
+padding-bottom: 10px;
+border-radius: 5px;
+border:1px solid grey;
+margin-top:20px;
+margin-left:70px;
+margin-right: 70px;
+padding-left:10px;
+padding-right: 5px;
+}
+
+
+.f-v-lc:focus {
+  transition: 0.5s;
+  border: 1px solid rgb(45, 113, 180) !important;
+  box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+  -moz-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+  -webkit-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+  }
+  
+  .f-v-lc:focus{
+  outline-offset: 0px !important;
+  outline: none !important;
+  }
+
+
+#form1{
+  display: block;
+}
+
+
+@media(max-width:450px){
+
+  .forms{
+    position: fixed;
+    width:100%;
+    height: 100%;
+  }
+
+  .signup-and-login-forms{
+  width:100%;
+   height:120%;
+  position: absolute;
+  top:0vw;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+
+
+form{
+
+  z-index: -1;
+}
+
+#form1{
+  position: absolute;
+}
+
+  .f-v-lc{
+width:90%;
+padding-top:10px;
+padding-bottom: 10px;
+border-radius: 5px;
+border:1px solid grey;
+margin-top:20px;
+margin-left:15px;
+
+}
+
+
+.for-pass{
+  width:0px
+}
+
+}
+
+.ef{
+  text-align: center;
+  color:grey;
+  font-size:12px;
+}
+
+.timber{
+  display: none;
+}
+
+#niga{
+  display: none;
+}
+
+/*  drop down ............................................................................. .        .          . .*/
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown1 {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 400px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right:0px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.dropdown-content1 a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.dropdown-content1 a:hover {background-color: #f1f1f1}
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+}
+
+.dropdown1:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.alinkdrop{
+  line-height: 5px;
+}
+
+.dropdown1 .dropdown-content1::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: 160px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+
+@media (max-width: 820px) {
+    .bi-caret-down{
+     display:none
+    }
+    .dropdown1:hover .dropdown-content1{
+      display:none
+    }
+  }
+
+
+  .fa-bars{
+    margin-top:20px;
+  }

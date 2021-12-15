@@ -1,0 +1,178 @@
+{% extends "parts/dashnav.html" %} {% load static %} {% block head %}
+<title>{{request.user}} | Dashboard</title>
+<meta name="description" content="Affiliate marketing">
+<meta charset="UTF">
+<meta name="author" content="Imran Abdu">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+<meta http-equiv="refresh" content="216000">
+<link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/dashnav.css' %}">
+<link rel="stylesheet" href="{% static 'css/editprofile.css' %}">
+<style>
+    #editprofile {
+        border-bottom: 2px solid purple;
+    }
+</style>
+{% endblock head %}
+
+<body>
+    {% block everything %}
+
+
+
+
+
+    <form enctype="multipart/form-data" class="form-for-filling-in-other" method="post" action="{% url 'editprofile'%}">
+
+        {% csrf_token %} {% if messages %} {% for message in messages %}
+        <div class="alert {{ message.tags }} m-2" id="msg" role="alert">
+            {{ message }}
+        </div>
+        {% endfor %} {% endif %}
+
+
+        <h3 style="border-bottom: 1px solid silver;margin-bottom:20px;margin-top:70px;">Profile image</h3>
+        <div class="sociallinks">
+
+            <label class="label">
+
+        {{form.profileimg}}
+        <span>Select a file</span>
+
+
+      </label>
+            <div class="iasdfff-imadf-df-dfimage-prof"><img id="output" width="300" src="{{profile.profileimg.src}}"></div>
+            <button id="reset" class="label">Remove Image</button>
+            <br>
+        </div>
+
+
+
+
+
+
+        <h3 style="border-bottom: 1px solid silver;margin-bottom:40px ;">Basic</h3>
+        <div class="sociallinks">
+
+
+
+            <label>Country</label><br> {{form.country}}
+            <br>
+
+
+            <label>Website</label><br> {{form.website}}
+            <br>
+
+
+            <label>Bio</label><br> {{form.bio}}
+            <br>
+            <br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h3 style="border-bottom: 1px solid silver;margin-bottom:20px;margin-top:70px;">Social links</h3>
+        <div class="sociallinks">
+            <label>Linkedin Profile</label><br> {{form.linkedin}}
+            <br>
+
+            <label>Istagram</label><br> {{form.istagram}}
+            <br>
+
+            <label>Facebook</label><br> {{form.facebook}}
+            <br>
+
+            <label>Twitter</label><br> {{form.twitter}}
+            <br>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <button class="savebutton" style="margin-left:50px;">Save</button>
+    </form>
+
+    <form>
+
+        <h3 style="border-bottom: 1px solid silver;margin-bottom:20px;margin-top:70px;">Other</h3>
+        <div class="sociallinks">
+            <label>Fullname</label><br>
+            <input type="text" class="imo-pan" value="{{firstname}} {{lastname}}" name="fullname"><br>
+
+            <label>Your Email</label><br>
+            <input type="email" class="imo-pan" value='{{email}}' name="email"><br><br>
+
+
+            <p><input type="checkbox"> <b> Allow</b> us to send you Recommended campaigns, exclusive discounts, and exciting announcements, Updates from campaigns you've supported, Replies to your comments, Surveys to help us improve
+            </p>
+
+            <p><input type="checkbox"> <b>Make</b> this email public. <b>Note</b>(The email address is not made public )</p>
+            <button class="savebutton">Update</button><br><br><br>
+        </div>
+
+
+    </form>
+
+
+
+    <script>
+        var loadFile = function(event) {
+            var image = document.getElementById('output');
+            var bo = document.getElementById('booo')
+            image.src = URL.createObjectURL(event.target.files[0]);
+
+            bo.display = "none"
+
+        };
+    </script>
+
+    <script type="text/javascript">
+        document.getElementById('output').onclick = function() {
+            var field = document.getElementById('field');
+            field.value = field.defaultValue;
+        };
+    </script>
+
+
+
+
+{% include 'parts/footer_account.html' %}
+{% block footeraccount %}
+{% endblock footeraccount %}
+
+
+    {% endblock %}

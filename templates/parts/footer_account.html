@@ -1,0 +1,66 @@
+{% load static %}
+{% block footeraccount %}
+<style>
+    .footer-for-profile {
+        clear: both;
+        margin-top: 40%;
+        margin-bottom: 25px;
+    }
+    
+    
+    .footer-for-profile li {
+        list-style: none;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        margin-left:40px;
+    }
+
+    .footer-for-profile img{
+        height:30px
+    }
+    
+    .hr-for-footer {
+        border: 1px solid silver;
+        width: 85%;
+    }
+
+    .footer-list{
+       width:200vh;
+  display:table-cell;
+  text-align:center;
+  vertical-align:middle;
+    }
+
+    @media(max-width:800px){
+        .footer-for-profile img{
+        display: none;
+        }
+        .footer-for-profile li {
+        margin-left:25px;
+    }
+    }
+
+    @media(max-width:500px){
+    .footer-for-profile li {
+        font-size: 15px;
+    }
+    }
+</style>
+
+<!--Footer-->
+<div class="footer-for-profile ">
+    <hr class="hr-for-footer ">
+
+    <div class="footer-list ">
+        <li><a style="font-size:13px;">© 2021 Diversefounders</a></li>
+        <li><a href="{% url 'startups' %}">Startups</a></li>
+        <li><a href="{% url 'startups' %}">Investors</a></li>  
+        <li><img src="{% static 'images/icon.png' %}"></li>
+        <li><a href="{% url 'privacypolicy' %}">Privacy</a> <b style="color:silver">&</b> <a href="{% url 'cookiepolicy' %}">Cookie Policy</a></li>
+        <li><a href="https://diversefounderssupport.zendesk.com/hc/en-us">Contact</a></li>
+        <li><a href="https://diversefounders.slack.com">Network</a></li>
+    </div>
+
+
+    {% endblock footeraccount %}

@@ -1,0 +1,181 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en"> 
+<head><link rel='icon' href="{% static 'images/icon.png' %}">
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+{% block head %}
+{% endblock %}
+</head>
+
+
+  </head>
+
+  
+  
+      <header>
+        <nav class="main-nav">
+          <input type="checkbox" id="check" />
+          <label for="check" class="menu-btn">
+            <i class="fa fa-bars"   aria-hidden="true" style="color: black;"></i>
+
+          </label>
+        <a href="{% url 'home' %}" class="logo">DiverseFounders</a>
+
+          <i class="fa fa-search" aria-hidden="true" id="sea-icon" onclick="showsearchBar()"></i>
+
+          <div class="search-section" id="searchcontainerP">
+
+            <form method="get" action="{% url 'search' %}">
+          <input type="text" name="q" placeholder="Search.." class="searchbar">
+          <p id="remove-searchbar" onclick="removesB()">&times;</p>
+          </form>
+          </div>
+      
+
+          <script>
+            var searchcontainer=document.getElementById('searchcontainerP');
+            var removeS=document.getElementById("remove-searchbar")
+           function removesB(){
+            searchcontainer.style.display="none"
+           }
+
+           function showsearchBar(){
+            searchcontainer.style.display="block"
+           }
+            </script>
+
+
+
+
+
+
+          <ul class="navlinks"> 
+
+            <div class="dropdown1">
+            <li class="ds"><a href="{% url 'projects' %}" class="lipo">Discover <i class="bi bi-caret-down"></i></a></li>
+              <div class="dropdown-content1">
+
+                <form method="get" action="{% url 'search' %}">
+              <a href="/projects/?q=" class="alinkdrop">All campaigns</a>
+              <a href="/projects/?q=art" class="alinkdrop">Arts</a>
+              <a href="/projects/?q=music" class="alinkdrop">Audio & music</a>
+              <a href="/projects/?q=tech" class="alinkdrop">Design & Tech</a>
+              <a href="/projects/?q=film" class="alinkdrop">Film</a>
+              <a href="/projects/?q=games" class="alinkdrop">Games</a>
+              <a href="/projects/?q=life style" class="alinkdrop">Life style</a>
+              <a href="/projects/?q=publishing" class="alinkdrop">Publishing</a>
+              </form>
+              
+              </div>
+            </div>
+
+            <style>
+              .dropdown-content1 button{
+                  display:inline;
+                  background-color: transparent;
+                  margin-top:0px;
+                  border:none;
+                  margin:0px;
+                  padding:0px;
+              }
+            </style>
+            
+              <li><a href="{% url 'startups' %}" class="lipo">Investors</a></li>
+
+
+
+            <li><a href="https://diversefounders.slack.com" target="_black"> Community</a></li>
+            <li><a href="{% url 'coaching' %}">Coaching</a></li>
+            <li><a href="{% url 'createcampaign' %}" class="lipo">Start a Campaign</a></li>
+
+           
+   
+        
+            {% if user.is_authenticated %}
+            
+            <div tabindex="0" class="menu1">
+            <div class="ll">
+              <img src="{{profile.profileimg.url}}" class="igm-profile"> <i class="fa fa-angle-down" aria-hidden="true"></i>
+
+            </div>
+      <div class="menu-dropdown1">
+        <p style="font-size:13px;line-height:10px;color:orange;">Signed in as {{request.user}} 😊</p><hr>
+          <a href="{% url 'dashboard' %}">Profile</a>
+          <a href="{% url 'campaigns' %}">My campaigns</a>
+          <a href="{% url 'fundingprofile' %}">My Contributions </a>
+          <a href="{% url 'editprofile' %}"> Edit profile</a>
+          <hr>
+          <a href="{% url 'logoutuser' %}">Log out</a>
+      </div>
+  </div>
+ 
+  
+  
+  <div class="morgen">
+    <li><a href="{% url 'dashboard' %}">Profile</a></li>
+    <li><a href="{% url 'campaigns' %}">My campaigns</a></li>
+    <li><a href="{% url 'fundingprofile' %}">My Contributions </a></li>
+    <li><a href="{% url 'editprofile' %}"> Edit profile</a></li>
+    <hr>
+    <li><a href="{% url 'logoutuser' %}">Log out</a></li>
+  </div>
+  
+  
+  {% else %}
+            
+  <li><a href="{% url 'signup' %}" class="contact" style="border-left: 1px solid black; padding-left:10px;">Sign up</a></li>
+  <li><a href="{% url 'login' %}" class="contact">Log in</a></li>
+     {% endif %}  
+            
+  
+  
+  
+          </ul>
+        </nav>
+  
+        
+       
+        
+        
+  
+  
+  
+  
+      </header>
+    </body>
+  </html>
+
+
+
+{% block content %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% include 'policy/cookieapi.html' %}
+{% block cookieapi %} 
+{% endblock cookieapi %}
+
+
+
+
+
+
+
+
+</body></html>
+

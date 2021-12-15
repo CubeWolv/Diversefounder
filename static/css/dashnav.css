@@ -1,0 +1,175 @@
+body{
+    margin:0px;
+    padding:0px;
+    font-family: "poppins", sans-serif;
+}
+
+
+
+
+.div-12 {
+    width: 80%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    white-space:nowrap;
+    border-bottom:2px solid rgb(233, 233, 233);
+    width:100%;
+    margin-top:30px;
+
+    z-index: 0;
+  }
+  
+  
+  .navigator {
+    box-sizing: border-box;
+    display: inline-block;
+      margin-left:100px;
+      font-size: 15px;
+      padding:10px;
+
+    
+  }
+
+  .navigator:hover{
+      border-bottom: 2px solid silver;
+  }
+  
+  
+  
+  @media(max-width:1020px){
+    .navigator{
+          margin-left:10%;
+      }
+         /* width */
+  ::-webkit-scrollbar {
+    height: 1px;
+    width:10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: silver;
+    border-radius: 10px;
+  }
+  
+
+
+.navigator:hover{
+    border-bottom:2px solid rgb(161, 161, 161)
+}
+  }
+  
+  @media(max-width:950px){
+    .navigator{
+          margin-left:6%;
+      }
+  
+    .div-12{
+    overflow-x: scroll;
+    scroll-behavior: smooth; 
+    }
+  
+    
+  }
+  
+  @media(max-width:635px){
+    .navigator{
+          margin-left:1%;
+          font-size:14px;
+      }
+
+
+  }
+  
+  
+/* style for the css menu dropdown container */
+.igm-profile{
+  height: 25px;
+  }
+  
+  .ll{
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    padding:0px;
+    margin:0px;
+    outline: 0;
+    text-align:left;
+  }
+  
+  /* style for the button */
+  .menu:before {
+      background-size:20px;
+      color:white;
+      padding: 5px 10px;
+      border: 1px solid #555;
+      border-radius:3px;
+  }
+  
+  .menu:focus { pointer-events:none; }
+  
+  /* If :focus detected the dropdown menu is displayed by making it visible */
+  .menu:focus .menu-dropdown { opacity:1; visibility:visible; }
+  
+  /* style for the dropdown box */
+  .menu-dropdown {
+      background-color: #364656;
+      width: 180px;
+      margin:3px 0 0 0;
+      padding: 10px;
+      border-radius:5px;
+      border-radius:3px;
+      pointer-events: auto;
+      position: absolute;
+      right:5px;
+      z-index: 1;
+      opacity: 0;
+      visibility: hidden;
+      transition: visibility 1s;
+      background: #ffffff;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+     }
+  
+  /* style the links in the dropdown */
+  .menu-dropdown a {
+      background:transparent;
+      border:none;
+      outline:0;
+      display:block;
+      color:white;
+      text-decoration:none;
+      width:160px;
+      padding-top:3;
+      padding:0px;
+      line-height: 40px;
+  } 
+  
+  .menu-dropdown a:hover{
+    color:orange
+  }
+
+
+  @media (max-width: 1000px) {
+     #contact1{
+       display: none;
+     }
+
+  }
+  @media (max-width: 1000px) {
+    #niga{
+      display: block;
+    }
+    .timber{
+      display: block;
+    }
+  }

@@ -1,0 +1,167 @@
+.form-for-filling-in-other{
+    margin-left:150px;
+    width:65%;
+}
+
+label{
+    margin-top:15px;
+}
+
+
+.imo-pan{
+    width:700px;
+    padding-left:10px; 
+    padding-top:8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+    border:1px solid rgb(168, 168, 168);
+
+}
+
+.savebutton{
+margin-top:15px;
+background-color: #A239ca;
+color:white;
+padding-top:8px;
+padding-bottom: 8px;
+width:20%;
+border:none;
+border-radius: 4px;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: rgba(0, 0, 0, 0.671);
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 105%;
+ 
+}
+
+#reset:hover .tooltiptext {
+  visibility: visible;
+  transition:all 1s;
+}
+
+
+
+.imo-pan:focus {
+    transition: 0.5s;
+    border: 1px solid rgb(45, 113, 180) !important;
+    box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    -moz-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    -webkit-box-shadow: 0 0 3px rgb(65, 131, 196) !important;
+    }
+    
+.imo-pan:focus{
+    outline-offset: 0px !important;
+    outline: none !important;
+    }
+
+
+
+
+label.label input[type="file"] {
+    position: absolute;
+    top: -1000px;
+}
+
+
+  .Profile-image-container{
+    position: relative;
+    width:45%;
+    
+}
+
+
+#label-for-image-profile{
+  position:absolute;
+  right:-10px;
+  bottom:-10px;
+}
+
+#reset{
+  position: absolute;
+  right:90px;
+  top:10px;
+  width:40px;
+  height:40px;
+  border-radius: 30px;
+  padding-top:13px;
+}
+
+  .label {
+    cursor: pointer;
+    border:none;
+    width:140px;
+    border-radius: 3px;
+    padding-top:10px;
+    text-align: center;
+    padding-bottom: 10px;
+    color:white;
+    font-size: 15px;
+    display: inline-block;
+    background-color: darkorange;
+  }
+
+  .iasdfff-imadf-df-dfimage-prof{
+    border:none;
+  }
+
+
+  #output{
+    width:300px;
+    height: 300px;
+  border:1px solid rgb(90, 89, 89);
+  border-radius: 100%;
+}
+
+
+
+  .label:invalid + span {
+    color: #000000;
+  }
+  .label:valid + span {
+    color: #ffffff;
+  }
+
+
+.sociallinks{
+    background-color: rgb(244, 245, 253);
+    padding:20px;
+    padding-bottom: 50px;
+    padding-left:50px;
+    overflow-x: hidden;
+    border-radius: 4px;
+}
+
+
+@media(max-width:900px){
+    .form-for-filling-in-other{
+        width:100%;
+        margin-left:5px;
+    }
+    .imo-pan{
+     width:100%
+    }
+    .sociallinks{
+        padding:20px;
+        padding-bottom: 50px;
+        padding-left:10px;
+    }
+
+    .label {
+        margin-left:15px;
+      }
+
+      .tooltiptext {
+   display: none;
+      }
+}
+
